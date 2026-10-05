@@ -1,1 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Ystone | Resin Art & Nature-Inspired Crafts</title>
+
+    <meta name="description"
+          content="Ystone creates handmade resin art, botanical crafts, nature-inspired decor and custom resin projects.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            background: #faf9f6;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #333;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #777;
+        }
+
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background:
+                linear-gradient(rgba(250,249,246,0.75), rgba(250,249,246,0.75)),
+                url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1800&q=80")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            color: #666;
+        }
+
+        .collections {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .card-image {
+            height: 260px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .about {
+            background: white;
+            text-align: center;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .custom {
+            text-align: center;
+            background: #f0eee8;
+        }
+
+        .custom p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #555;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .collections {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">YSTONE</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">About</a>
+        <a href="#custom">Custom</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>YSTONE</h1>
+
+        <p>
+            Resin Art & Nature-Inspired Crafts
+        </p>
+
+        <a class="button" href="#collections">
+            Explore Our Creations
+        </a>
+
+    </div>
+
+</section>
+
+
+<section id="collections">
+
+    <h2 class="section-title">
+        Our Collections
+    </h2>
+
+    <p class="section-intro">
+        Discover handcrafted resin creations inspired by nature,
+        botanical elements, ocean scenes and meaningful memories.
+    </p>
+
+
+    <div class="collections">
+
+        <div class="card">
+
+            <div class="card-image"
+                 style="background-image:url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1000&q=80');">
+            </div>
+
+            <div class="card-content">
+                <h3>Botanical Art</h3>
+
+                <p>
+                    Flowers, plants and natural elements preserved
+                    in clear resin to create timeless decorative pieces.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image"
+                 style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80');">
+            </div>
+
+            <div class="card-content">
+                <h3>Ocean Collection</h3>
+
+                <p>
+                    Inspired by the movement, colors and atmosphere
+                    of the ocean.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image"
+                 style="background-image:url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1000&q=80');">
+            </div>
+
+            <div class="card-content">
+                <h3>Home Décor</h3>
+
+                <p>
+                    Resin creations designed to bring natural
+                    textures and artistic details into everyday spaces.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about" id="about">
+
+    <h2 class="section-title">
+        About Ystone
+    </h2>
+
+    <p class="about-text">
+
+        Ystone creates resin art inspired by nature, memories
+        and meaningful objects.
+
+        We combine careful craftsmanship with a love for natural
+        materials to create decorative pieces that preserve
+        moments and bring a sense of nature into everyday life.
+
+    </p>
+
+</section>
+
+
+<section class="custom" id="custom">
+
+    <h2 class="section-title">
+        Custom Projects
+    </h2>
+
+    <p>
+        Have something meaningful you'd like to preserve?
+
+        We create customized resin pieces using flowers,
+        botanical elements, natural materials and architectural
+        fragments.
+    </p>
+
+    <a class="button" href="#contact">
+        Discuss Your Project
+    </a>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+    <h2 class="section-title">
+        Contact Us
+    </h2>
+
+    <p class="section-intro">
+        Interested in our products or a custom project?
+        We'd love to hear from you.
+    </p>
+
+    <div class="contact-box">
+
+        <p>
+            Email:
+            <strong>your-email@example.com</strong>
+        </p>
+
+        <br>
+
+        <p>
+            Wholesale & OEM inquiries are welcome.
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Ystone. All Rights Reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>
