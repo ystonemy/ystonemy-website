@@ -1,381 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YstoneMy | Resin Art & Nature-Inspired Crafts</title>
 
-    <title>YstoneMy | Resin Art & Nature-Inspired Crafts</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <meta name="description"
-          content="YstoneMy creates handmade resin art, botanical crafts, nature-inspired decor and custom resin projects.">
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333;
+      background: #faf9f6;
+      line-height: 1.6;
+    }
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    header {
+      background: #ffffff;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #eeeeee;
+    }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #333;
-            background: #faf9f6;
-            line-height: 1.6;
-        }
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #222;
+    }
 
-        header {
-            background: #ffffff;
-            padding: 22px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+    nav a {
+      text-decoration: none;
+      color: #444;
+      margin-left: 28px;
+      font-size: 14px;
+    }
 
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            letter-spacing: 3px;
-        }
+    nav a:hover {
+      color: #888;
+    }
 
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #333;
-            font-size: 15px;
-        }
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      background:
+        linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72)),
+        url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1800&q=80")
+        center/cover;
+    }
 
-        nav a:hover {
-            color: #777;
-        }
+    .hero-content {
+      max-width: 800px;
+    }
 
-        .hero {
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 80px 20px;
-            background:
-                linear-gradient(rgba(250,249,246,0.75), rgba(250,249,246,0.75)),
-                url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1800&q=80")
-                center/cover;
-        }
+    .hero h1 {
+      font-size: 58px;
+      letter-spacing: 6px;
+      margin-bottom: 20px;
+    }
 
-        .hero-content {
-            max-width: 800px;
-        }
+    .hero p {
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 30px;
+    }
 
-        .hero h1 {
-            font-size: 58px;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-        }
+    .button {
+      display: inline-block;
+      padding: 13px 28px;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
 
-        .hero p {
-            font-size: 21px;
-            margin-bottom: 35px;
-        }
+    .button:hover {
+      background: #555;
+    }
 
-        .button {
-            display: inline-block;
-            padding: 14px 30px;
-            background: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 3px;
-        }
+    section {
+      padding: 80px 8%;
+    }
 
-        section {
-            padding: 80px 8%;
-        }
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
 
-        .section-title {
-            text-align: center;
-            font-size: 34px;
-            margin-bottom: 15px;
-        }
+    .section-title h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
 
-        .section-intro {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 50px;
-            color: #666;
-        }
+    .section-title p {
+      color: #777;
+    }
 
-        .collections {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+    .collections {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
 
-        .card {
-            background: white;
-            border: 1px solid #eee;
-            overflow: hidden;
-        }
+    .card {
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
 
-        .card-image {
-            height: 260px;
-            background-size: cover;
-            background-position: center;
-        }
+    .card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+    }
 
-        .card-content {
-            padding: 25px;
-        }
+    .card-content {
+      padding: 25px;
+    }
 
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 21px;
-        }
+    .card-content h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
 
-        .about {
-            background: white;
-            text-align: center;
-        }
+    .card-content p {
+      color: #666;
+      font-size: 14px;
+    }
 
-        .about-text {
-            max-width: 800px;
-            margin: auto;
-            font-size: 18px;
-            color: #555;
-        }
+    .about {
+      background: #f1eee8;
+    }
 
-        .custom {
-            text-align: center;
-            background: #f0eee8;
-        }
+    .about-content {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
 
-        .custom p {
-            max-width: 700px;
-            margin: 0 auto 30px;
-            color: #555;
-        }
+    .about-content h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
 
-        .contact {
-            text-align: center;
-        }
+    .about-content p {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
 
-        .contact-box {
-            max-width: 650px;
-            margin: auto;
-        }
+    .custom {
+      background: white;
+    }
 
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-        }
+    .custom-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
 
-        @media (max-width: 800px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+    .custom-content h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
 
-            nav a {
-                margin: 0 8px;
-            }
+    .custom-content p {
+      color: #666;
+      margin-bottom: 25px;
+    }
 
-            .hero h1 {
-                font-size: 40px;
-            }
+    .contact {
+      text-align: center;
+      background: #222;
+      color: white;
+    }
 
-            .collections {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    .contact h2 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      color: #ddd;
+      margin-bottom: 10px;
+    }
+
+    .contact a {
+      color: white;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .collections {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 6%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">YSTONE</div>
+  <!-- Header -->
+  <header>
+    <div class="logo">YstoneMy</div>
 
     <nav>
-        <a href="#home">Home</a>
-        <a href="#collections">Collections</a>
-        <a href="#about">About</a>
-        <a href="#custom">Custom</a>
-        <a href="#contact">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About</a>
+      <a href="#custom">Custom</a>
+      <a href="#contact">Contact</a>
     </nav>
-</header>
+  </header>
 
 
-<section class="hero" id="home">
-
+  <!-- Hero -->
+  <section class="hero" id="home">
     <div class="hero-content">
 
-        <h1>YSTONE</h1>
+      <h1>YstoneMy</h1>
 
-        <p>
-            Resin Art & Nature-Inspired Crafts
-        </p>
+      <p>
+        Resin Art & Nature-Inspired Crafts
+      </p>
 
-        <a class="button" href="#collections">
-            Explore Our Creations
-        </a>
+      <a href="#collections" class="button">
+        Explore Collection
+      </a>
 
     </div>
+  </section>
 
-</section>
 
+  <!-- Collections -->
+  <section id="collections">
 
-<section id="collections">
-
-    <h2 class="section-title">
-        Our Collections
-    </h2>
-
-    <p class="section-intro">
-        Discover handcrafted resin creations inspired by nature,
-        botanical elements, ocean scenes and meaningful memories.
-    </p>
-
+    <div class="section-title">
+      <h2>Collections</h2>
+      <p>Nature, memories and imagination captured in resin.</p>
+    </div>
 
     <div class="collections">
 
-        <div class="card">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1000&q=80">
 
-            <div class="card-image"
-                 style="background-image:url('https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1000&q=80');">
-            </div>
+        <div class="card-content">
+          <h3>Botanical Art</h3>
 
-            <div class="card-content">
-                <h3>Botanical Art</h3>
-
-                <p>
-                    Flowers, plants and natural elements preserved
-                    in clear resin to create timeless decorative pieces.
-                </p>
-            </div>
-
+          <p>
+            Delicate flowers, plants and natural elements transformed into unique resin artworks.
+          </p>
         </div>
+      </div>
 
 
-        <div class="card">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80">
 
-            <div class="card-image"
-                 style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80');">
-            </div>
+        <div class="card-content">
+          <h3>Ocean Collection</h3>
 
-            <div class="card-content">
-                <h3>Ocean Collection</h3>
-
-                <p>
-                    Inspired by the movement, colors and atmosphere
-                    of the ocean.
-                </p>
-            </div>
-
+          <p>
+            Inspired by the beauty, movement and atmosphere of the ocean.
+          </p>
         </div>
+      </div>
 
 
-        <div class="card">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1000&q=80">
 
-            <div class="card-image"
-                 style="background-image:url('https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1000&q=80');">
-            </div>
+        <div class="card-content">
+          <h3>Home Décor</h3>
 
-            <div class="card-content">
-                <h3>Home Décor</h3>
-
-                <p>
-                    Resin creations designed to bring natural
-                    textures and artistic details into everyday spaces.
-                </p>
-            </div>
-
+          <p>
+            Decorative resin pieces designed to bring natural beauty and character into everyday spaces.
+          </p>
         </div>
+      </div>
 
     </div>
 
-</section>
+  </section>
 
 
-<section class="about" id="about">
+  <!-- About -->
+  <section class="about" id="about">
 
-    <h2 class="section-title">
-        About Ystone
-    </h2>
+    <div class="about-content">
 
-    <p class="about-text">
+      <h2>About YstoneMy</h2>
 
-        Ystone creates resin art inspired by nature, memories
-        and meaningful objects.
+      <p>
+        YstoneMy creates resin artworks inspired by nature, memories and the beauty of everyday life.
+      </p>
 
-        We combine careful craftsmanship with a love for natural
-        materials to create decorative pieces that preserve
-        moments and bring a sense of nature into everyday life.
+      <p>
+        Each piece is carefully crafted to preserve a moment, a natural element or a meaningful idea in a unique artistic form.
+      </p>
 
-    </p>
+      <p>
+        From botanical pieces and ocean-inspired designs to personalized creations, YstoneMy explores the possibilities of resin as an artistic medium.
+      </p>
 
-</section>
+    </div>
+
+  </section>
 
 
-<section class="custom" id="custom">
+  <!-- Custom Projects -->
+  <section class="custom" id="custom">
 
-    <h2 class="section-title">
-        Custom Projects
-    </h2>
+    <div class="custom-content">
+
+      <h2>Custom Projects</h2>
+
+      <p>
+        Have a special idea, memory or natural element you would like to preserve?
+      </p>
+
+      <p>
+        YstoneMy offers customized resin artwork for personal collections, gifts, interior decoration and special projects.
+      </p>
+
+      <a href="#contact" class="button">
+        Get in Touch
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+
+    <h2>Let's Create Something Special</h2>
 
     <p>
-        Have something meaningful you'd like to preserve?
-
-        We create customized resin pieces using flowers,
-        botanical elements, natural materials and architectural
-        fragments.
+      For custom projects, wholesale inquiries or collaborations:
     </p>
 
-    <a class="button" href="#contact">
-        Discuss Your Project
+    <p>
+      Email:
+      <a href="mailto:your@email.com">
+        your@email.com
+      </a>
+    </p>
+
+    <br>
+
+    <!-- Replace the link below with your Etsy shop URL -->
+    <a
+      href="https://www.etsy.com/"
+      target="_blank"
+      class="button"
+    >
+      Visit Our Etsy Shop
     </a>
 
-</section>
+  </section>
 
 
-<section id="contact" class="contact">
+  <!-- Footer -->
+  <footer>
 
-    <h2 class="section-title">
-        Contact Us
-    </h2>
+    © 2026 YstoneMy. All Rights Reserved.
 
-    <p class="section-intro">
-        Interested in our products or a custom project?
-        We'd love to hear from you.
-    </p>
-
-    <div class="contact-box">
-
-        <p>
-            Email:
-            <strong>your-email@example.com</strong>
-        </p>
-
-        <br>
-
-        <p>
-            Wholesale & OEM inquiries are welcome.
-        </p>
-
-    </div>
-
-</section>
-
-
-<footer>
-
-    <p>
-        © 2026 Ystone. All Rights Reserved.
-    </p>
-
-</footer>
+  </footer>
 
 </body>
 </html>
