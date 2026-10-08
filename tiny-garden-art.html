@@ -20,23 +20,26 @@
     }
 
     .zoomable-image {
-      cursor: zoom-in;
-      transition: transform 0.3s ease;
-    }
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
 
-    .zoomable-image.enlarged {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: auto;
-      height: auto;
-      max-width: 90vw;
-      max-height: 85vh;
-      object-fit: contain;
-      z-index: 1001;
-      cursor: zoom-out;
-    }
+.zoomable-image.enlarged {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: auto !important;
+  height: auto !important;
+  
+  max-width: 90vw;
+  max-height: 85vh;
+  
+  object-fit: contain !important;
+  z-index: 1001;
+  cursor: zoom-out;
+}
 
     /* ---------- Header（与首页一致） ---------- */
     header {
