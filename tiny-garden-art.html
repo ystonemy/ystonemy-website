@@ -19,6 +19,23 @@
       line-height: 1.6;
     }
 
+    .zoomable-image {
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+.zoomable-image.enlarged {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(5);
+  transform-origin: center;
+  z-index: 1001;
+  cursor: zoom-out;
+  max-width: none;
+  max-height: none;
+}
+
     /* ---------- Header（与首页一致） ---------- */
     header {
       background: #ffffff;
@@ -239,14 +256,18 @@
       </div>
 
       <div class="card">
-        <img src="images/50YJ2.jpg">
-        <div class="card-content">
-          <h3>Tiny Garden Collection 1</h3>
-          <p>Code: 50YJ2.</p>
-          <p>Size: 50x50x50mm.</p>
-          <p>Material: Dry moss, flowers, seashell, leaves & stone.</p>
-        </div>
+        <img src="images/50YJ2.jpg"
+        alt="Tiny Garden Collection 1"
+        onclick="openImage(this)"
+        class="zoomable-image">
+
+      <div class="card-content">
+        <h3>Tiny Garden Collection 1</h3>
+        <p>Code: 50YJ2.</p>
+        <p>Size: 50x50x50mm.</p>
+        <p>Material: Dry moss, flowers, seashell, leaves & stone.</p>
       </div>
+    </div>
 
       <div class="card">
         <img src="images/80tulip-ylw1.jpg">
@@ -282,5 +303,19 @@
     © 2026 YstoneMy. All Rights Reserved.
   </footer>
 
+  <script>
+function openImage(img) {
+  img.classList.toggle("enlarged");
+}
+
+document.addEventListener("click", function(event) {
+  document.querySelectorAll(".zoomable-image.enlarged").forEach(function(img) {
+    if (event.target !== img) {
+      img.classList.remove("enlarged");
+    }
+  });
+});
+</script>
+  
 </body>
 </html>
