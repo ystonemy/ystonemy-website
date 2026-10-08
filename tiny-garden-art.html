@@ -1,1 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiny Garden Art | YstoneMy</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333;
+      background: #faf9f6;
+      line-height: 1.6;
+    }
+
+    /* ---------- Header（与首页一致） ---------- */
+    header {
+      background: #ffffff;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #222;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      margin-left: 28px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #888;
+    }
+
+    /* ---------- Button ---------- */
+    .button {
+      display: inline-block;
+      padding: 13px 28px;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .button:hover {
+      background: #555;
+    }
+
+    /* ---------- Page Hero ---------- */
+    .page-hero {
+      text-align: center;
+      padding: 15px 20px 20px;
+      background: #f1eee8;
+    }
+
+    .page-hero h1 {
+      font-size: 46px;
+      letter-spacing: 4px;
+      margin-bottom: 2px;
+    }
+
+    .page-hero p {
+      color: #666;
+      font-size: 17px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ---------- Gallery ---------- */
+    .gallery-section {
+      padding: 50px 6%;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .gallery .card {
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .gallery .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery .card-content {
+      padding: 22px;
+    }
+
+    .gallery .card-content h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .gallery .card-content p {
+      color: #666;
+      font-size: 12px;
+    }
+
+    /* ---------- Back / CTA ---------- */
+    .back-section {
+      text-align: center;
+      padding: 20px 8% 40px;
+    }
+
+    .back-section p {
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .page-hero h1 {
+        font-size: 34px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-section {
+        padding: 50px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header（与首页一致，链接指向首页锚点） -->
+  <header>
+    <div class="logo">YstoneMy</div>
+
+    <nav>
+      <a href="https://ystonemy.github.io/ystonemy-website/">Home</a>
+      <a href="index.html#collections">Collections</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#custom">Custom</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1>Tiny Garden Art</h1>
+    <p>
+     
+  </section>
+
+
+  <!-- Gallery -->
+  <section class="gallery-section">
+    <div class="gallery">
+
+      <div class="card">
+        <img src="images/80-mossforest.jpg">
+        <div class="card-content">
+          <h3>Moss Forest A</h3>
+          <p>Code: 80MF001.</p>
+          <p>Size: 80mm diameter.</p>
+          <p>Material: Dry Moss & Leaves.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/80-mossforest2.jpg">
+        <div class="card-content">
+          <h3>Moss Forest B</h3>
+          <p>Code: 80MF002.</p>
+          <p>Size: 80mm diameter.</p>
+          <p>Material: Dry Moss & Leaves.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/80tulip-org1.jpg">
+        <div class="card-content">
+          <h3>Tulip Orange</h3>
+          <p>Code: 80Tuliporg.</p>
+          <p>Size: 80mm diameter.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/80tulip-whred1.jpg">
+        <div class="card-content">
+          <h3>Tulip White Red</h3>
+          <p>Code: 80Tulipwhred.</p>
+          <p>Size: 80mm diameter.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/80tulip-ylw1.jpg">
+        <div class="card-content">
+          <h3>Tulip Yellow</h3>
+          <p>Code: 80Tulipylw.</p>
+          <p>Size: 80mm diameter.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/80tulip-pur1.jpg">
+        <div class="card-content">
+          <h3>Tulip Purple</h3>
+          <p>Code: 80Tulippur.</p>
+          <p>Size: 80mm diameter.</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+
+  <!-- Back / CTA -->
+  <section class="back-section">
+    <p>Interested in a custom piece?</p>
+    <a href="index.html#contact" class="button">Get in Touch</a>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    © 2026 YstoneMy. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
