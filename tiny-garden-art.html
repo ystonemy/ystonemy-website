@@ -34,7 +34,7 @@
   margin: 0 !important;
   padding: 0 !important;
   transition: none !important;
-  cursor: zoom-in;
+  cursor: grab;
 }
 
 
@@ -408,9 +408,51 @@
     activeImage.style.top = newTop + "px";
   }, { passive: false });
 
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") closeImage();
+  // Drag the enlarged image with the mouse
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+  let imageLeft = 0;
+  let imageTop = 0;
+
+  document.addEventListener("mousedown", function (event) {
+    if (!activeImage || event.button !== 0) return;
+
+    isDragging = true;
+    startX = event.clientX;
+    startY = event.clientY;
+    imageLeft = parseFloat(activeImage.style.left) || 0;
+    imageTop = parseFloat(activeImage.style.top) || 0;
+
+    activeImage.style.cursor = "grabbing";
+    event.preventDefault();
   });
+
+  document.addEventListener("mousemove", function (event) {
+    if (!isDragging || !activeImage) return;
+
+    activeImage.style.left =
+      imageLeft + event.clientX - startX + "px";
+
+    activeImage.style.top =
+      imageTop + event.clientY - startY + "px";
+  });
+
+  document.addEventListener("mouseup", function () {
+    isDragging = false;
+
+    if (activeImage) {
+      activeImage.style.cursor = "grab";
+    }
+  });
+
+  // Close the image when the Escape key is pressed
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeImage();
+    }
+  });
+
 })();
 </script>
 
