@@ -303,12 +303,6 @@
     © 2026 YstoneMy. All Rights Reserved.
   </footer>
 
-  <script>
-function openImage(img) {
-  img.classList.toggle("enlarged");
-}
-
-
 <script>
 (function () {
   let activeImage = null;
@@ -324,17 +318,14 @@ function openImage(img) {
     if (!activeImage) return;
 
     activeImage.classList.remove("enlarged");
-    activeImage.style.position = "";
-    activeImage.style.left = "";
-    activeImage.style.top = "";
-    activeImage.style.width = "";
-    activeImage.style.height = "";
-    activeImage.style.transform = "";
-    activeImage.style.zIndex = "";
-    activeImage.style.maxWidth = "";
-    activeImage.style.maxHeight = "";
-    activeImage.style.objectFit = "";
-    activeImage.style.margin = "";
+
+    [
+      "position", "left", "top", "width", "height",
+      "transform", "zIndex", "maxWidth", "maxHeight",
+      "objectFit", "margin"
+    ].forEach(function (property) {
+      activeImage.style[property] = "";
+    });
 
     activeImage = null;
     zoom = 1;
@@ -348,7 +339,6 @@ function openImage(img) {
     activeImage = img;
     zoom = 1;
 
-    // Fit the full image within the visitor's screen
     const fit = Math.min(
       window.innerWidth * 0.9 / img.naturalWidth,
       window.innerHeight * 0.85 / img.naturalHeight,
@@ -359,44 +349,41 @@ function openImage(img) {
     baseHeight = img.naturalHeight * fit;
 
     img.classList.add("enlarged");
+    img.style.position = "fixed";
     img.style.width = baseWidth + "px";
     img.style.height = baseHeight + "px";
     img.style.left = (window.innerWidth - baseWidth) / 2 + "px";
     img.style.top = (window.innerHeight - baseHeight) / 2 + "px";
     img.style.transform = "none";
-
     img.style.maxWidth = "none";
     img.style.maxHeight = "none";
-    img.style.objectFit = "fill";
+    img.style.objectFit = "contain";
   }
 
-  // Open the image when clicked
   document.addEventListener("click", function (event) {
     const img = event.target.closest(".gallery .card img");
 
     if (img) {
       event.preventDefault();
 
-      if (img === activeImage) return;
+      if (img === activeImage) {
+        closeImage();
+      } else {
+        openImage(img);
+      }
 
-      openImage(img);
       return;
     }
 
-    // Close the image when clicking outside
-    if (activeImage) {
-      closeImage();
-    }
+    closeImage();
   });
 
-  // Zoom in and out with the mouse wheel
   document.addEventListener("wheel", function (event) {
     if (!activeImage) return;
 
     event.preventDefault();
 
     const direction = event.deltaY < 0 ? 1 : -1;
-
     const nextZoom = Math.max(
       minZoom,
       Math.min(maxZoom, zoom + direction * zoomStep)
@@ -405,38 +392,27 @@ function openImage(img) {
     if (nextZoom === zoom) return;
 
     const rect = activeImage.getBoundingClientRect();
-
-    // Zoom toward the mouse pointer
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
     const ratio = nextZoom / zoom;
 
     const newLeft =
-      mouseX - (mouseX - rect.left) * ratio;
+      event.clientX - (event.clientX - rect.left) * ratio;
 
     const newTop =
-      mouseY - (mouseY - rect.top) * ratio;
+      event.clientY - (event.clientY - rect.top) * ratio;
 
     zoom = nextZoom;
 
-    activeImage.style.width =
-      (baseWidth * zoom) + "px";
-
-    activeImage.style.height =
-      (baseHeight * zoom) + "px";
-
+    activeImage.style.width = baseWidth * zoom + "px";
+    activeImage.style.height = baseHeight * zoom + "px";
     activeImage.style.left = newLeft + "px";
     activeImage.style.top = newTop + "px";
   }, { passive: false });
 
-  // Close the image when the Escape key is pressed
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      closeImage();
-    }
+    if (event.key === "Escape") closeImage();
   });
 })();
 </script>
- 
+
 </body>
 </html>
