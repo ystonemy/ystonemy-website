@@ -18,29 +18,25 @@
       background: #faf9f6;
       line-height: 1.6;
     }
-
-    .zoomable-image {
+    
+/* Product image zoom */
+.gallery .card img {
   cursor: zoom-in;
-  transition: transform 0.3s ease;
 }
 
-.zoomable-image.enlarged {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: auto !important;
-  height: auto !important;
-
-  min-width: 0;
-  max-width: 90vw !important;
-  max-height: 85vh !important;
-
-  object-fit: contain !important;
-  z-index: 1001;
-  cursor: zoom-out;
+.gallery .card img.enlarged {
+  position: fixed !important;
+  display: block !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: fill !important;
+  z-index: 2000 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: none !important;
+  cursor: zoom-in;
 }
+
 
     /* ---------- Header（与首页一致） ---------- */
     header {
@@ -262,10 +258,8 @@
       </div>
 
       <div class="card">
-        <img src="images/50YJ2.jpg"
-        alt="Tiny Garden Collection 1"
-        onclick="openImage(this)"
-        class="zoomable-image">
+       <img src="images/50YJ2.jpg"
+     alt="Tiny Garden Collection 1">>
 
       <div class="card-content">
         <h3>Tiny Garden Collection 1</h3>
@@ -314,14 +308,135 @@ function openImage(img) {
   img.classList.toggle("enlarged");
 }
 
-document.addEventListener("click", function(event) {
-  document.querySelectorAll(".zoomable-image.enlarged").forEach(function(img) {
-    if (event.target !== img) {
-      img.classList.remove("enlarged");
+
+<script>
+(function () {
+  let activeImage = null;
+  let zoom = 1;
+  let baseWidth = 0;
+  let baseHeight = 0;
+
+  const minZoom = 1;
+  const maxZoom = 5;
+  const zoomStep = 0.5;
+
+  function closeImage() {
+    if (!activeImage) return;
+
+    activeImage.classList.remove("enlarged");
+    activeImage.style.position = "";
+    activeImage.style.left = "";
+    activeImage.style.top = "";
+    activeImage.style.width = "";
+    activeImage.style.height = "";
+    activeImage.style.transform = "";
+    activeImage.style.zIndex = "";
+    activeImage.style.maxWidth = "";
+    activeImage.style.maxHeight = "";
+    activeImage.style.objectFit = "";
+    activeImage.style.margin = "";
+
+    activeImage = null;
+    zoom = 1;
+  }
+
+  function openImage(img) {
+    closeImage();
+
+    if (!img.complete || !img.naturalWidth) return;
+
+    activeImage = img;
+    zoom = 1;
+
+    // Fit the full image within the visitor's screen
+    const fit = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.85 / img.naturalHeight,
+      1
+    );
+
+    baseWidth = img.naturalWidth * fit;
+    baseHeight = img.naturalHeight * fit;
+
+    img.classList.add("enlarged");
+    img.style.width = baseWidth + "px";
+    img.style.height = baseHeight + "px";
+    img.style.left = (window.innerWidth - baseWidth) / 2 + "px";
+    img.style.top = (window.innerHeight - baseHeight) / 2 + "px";
+    img.style.transform = "none";
+
+    img.style.maxWidth = "none";
+    img.style.maxHeight = "none";
+    img.style.objectFit = "fill";
+  }
+
+  // Open the image when clicked
+  document.addEventListener("click", function (event) {
+    const img = event.target.closest(".gallery .card img");
+
+    if (img) {
+      event.preventDefault();
+
+      if (img === activeImage) return;
+
+      openImage(img);
+      return;
+    }
+
+    // Close the image when clicking outside
+    if (activeImage) {
+      closeImage();
     }
   });
-});
+
+  // Zoom in and out with the mouse wheel
+  document.addEventListener("wheel", function (event) {
+    if (!activeImage) return;
+
+    event.preventDefault();
+
+    const direction = event.deltaY < 0 ? 1 : -1;
+
+    const nextZoom = Math.max(
+      minZoom,
+      Math.min(maxZoom, zoom + direction * zoomStep)
+    );
+
+    if (nextZoom === zoom) return;
+
+    const rect = activeImage.getBoundingClientRect();
+
+    // Zoom toward the mouse pointer
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+    const ratio = nextZoom / zoom;
+
+    const newLeft =
+      mouseX - (mouseX - rect.left) * ratio;
+
+    const newTop =
+      mouseY - (mouseY - rect.top) * ratio;
+
+    zoom = nextZoom;
+
+    activeImage.style.width =
+      (baseWidth * zoom) + "px";
+
+    activeImage.style.height =
+      (baseHeight * zoom) + "px";
+
+    activeImage.style.left = newLeft + "px";
+    activeImage.style.top = newTop + "px";
+  }, { passive: false });
+
+  // Close the image when the Escape key is pressed
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeImage();
+    }
+  });
+})();
 </script>
-  
+ 
 </body>
 </html>
