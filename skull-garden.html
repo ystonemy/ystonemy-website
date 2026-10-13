@@ -1,1 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiny Garden Art | YstoneMy</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333;
+      background: #faf9f6;
+      line-height: 1.6;
+    }
+    
+/* Product image zoom */
+.gallery .card img {
+  cursor: zoom-in;
+}
+
+.gallery .card img.enlarged {
+  position: fixed !important;
+  display: block !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: fill !important;
+  z-index: 2000 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: none !important;
+  cursor: grab;
+}
+
+
+    /* ---------- Header（与首页一致） ---------- */
+    header {
+      background: #ffffff;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #eeeeee;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #222;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      margin-left: 28px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #888;
+    }
+
+    /* ---------- Button ---------- */
+    .button {
+      display: inline-block;
+      padding: 13px 28px;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .button:hover {
+      background: #555;
+    }
+
+    /* ---------- Page Hero ---------- */
+    .page-hero {
+      text-align: center;
+      padding: 15px 20px 20px;
+      background: #f1eee8;
+    }
+
+    .page-hero h1 {
+      font-size: 46px;
+      letter-spacing: 4px;
+      margin-bottom: 2px;
+    }
+
+    .page-hero p {
+      color: #666;
+      font-size: 17px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ---------- Gallery ---------- */
+    .gallery-section {
+      padding: 50px 6%;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .gallery .card {
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .gallery .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery .card-content {
+      padding: 22px;
+    }
+
+    .gallery .card-content h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .gallery .card-content p {
+      color: #666;
+      font-size: 12px;
+    }
+
+    /* ---------- Back / CTA ---------- */
+    .back-section {
+      text-align: center;
+      padding: 20px 8% 40px;
+    }
+
+    .back-section p {
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) {
+
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .page-hero h1 {
+        font-size: 34px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-section {
+        padding: 50px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header（与首页一致，链接指向首页锚点） -->
+  <header>
+    <div class="logo">YstoneMy</div>
+
+    <nav>
+      <a href="https://ystonemy.github.io/ystonemy-website/">Home</a>
+      <a href="index.html#collections">Collections</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#custom">Custom</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1>Tiny Garden Art</h1>
+    <p>
+     
+  </section>
+
+
+  <!-- Gallery -->
+  <section class="gallery-section">
+    <div class="gallery">
+
+      <div class="card">
+        <img src="images/80-mossforest.jpg">
+        <div class="card-content">
+          <h3>Moss Forest A</h3>
+          <p>Code: 80MF001.</p>
+          <p>Size: 80mm diameter.</p>
+          <p>Material: Dry moss & leaves.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/80-mossforest2.jpg">
+        <div class="card-content">
+          <h3>Moss Forest B</h3>
+          <p>Code: 80MF002.</p>
+          <p>Size: 80mm diameter.</p>
+          <p>Material: Dry moss & leaves.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/80-tinygarden.jpg">
+        <div class="card-content">
+          <h3>Tiny Garden</h3>
+          <p>Code: 80Tingg001.</p>
+          <p>Size: 80mm diameter.</p>
+          <p>Material: Dry moss & leaves.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/80-daisygarden.JPG">
+        <div class="card-content">
+          <h3>Daisy Garden</h3>
+          <p>Code: 80Daisyg001.</p>
+          <p>Size: 80mm diameter.</p>
+          <p>Material: Daisy & dry moss.</p>
+        </div>
+      </div>
+
+      <div class="card">
+       <img src="images/50YJ2.jpg"
+     alt="Tiny Garden Collection 1">
+
+      <div class="card-content">
+        <h3>Tiny Garden Collection 1</h3>
+        <p>Code: 50YJ2.</p>
+        <p>Size: 50x50x50mm.</p>
+        <p>Material: Dry moss, flowers, seashell, leaves & stone.</p>
+      </div>
+    </div>
+
+      <div class="card">
+        <img src="images/80tulip-ylw1.jpg">
+        <div class="card-content">
+          <h3>Tulip Yellow</h3>
+          <p>Code: 80Tulipylw.</p>
+          <p>Size: 80mm diameter.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="images/80tulip-pur1.jpg">
+        <div class="card-content">
+          <h3>Tulip Purple</h3>
+          <p>Code: 80Tulippur.</p>
+          <p>Size: 80mm diameter.</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+
+  <!-- Back / CTA -->
+  <section class="back-section">
+    <p>Interested in a custom piece?</p>
+    <a href="index.html#contact" class="button">Get in Touch</a>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    © 2026 YstoneMy. All Rights Reserved.
+  </footer>
+
+<script>
+(function () {
+  let activeImage = null;
+  let zoom = 1;
+  let baseWidth = 0;
+  let baseHeight = 0;
+
+  const minZoom = 1;
+  const maxZoom = 5;
+  const zoomStep = 0.5;
+
+  function closeImage() {
+    if (!activeImage) return;
+
+    activeImage.classList.remove("enlarged");
+
+    [
+      "position", "left", "top", "width", "height",
+      "transform", "zIndex", "maxWidth", "maxHeight",
+      "objectFit", "margin"
+    ].forEach(function (property) {
+      activeImage.style[property] = "";
+    });
+
+    activeImage = null;
+    zoom = 1;
+  }
+
+  function openImage(img) {
+    closeImage();
+
+    if (!img.complete || !img.naturalWidth) return;
+
+    activeImage = img;
+    zoom = 1;
+
+    const fit = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.85 / img.naturalHeight,
+      1
+    );
+
+    baseWidth = img.naturalWidth * fit;
+    baseHeight = img.naturalHeight * fit;
+
+    img.classList.add("enlarged");
+    img.style.position = "fixed";
+    img.style.width = baseWidth + "px";
+    img.style.height = baseHeight + "px";
+    img.style.left = (window.innerWidth - baseWidth) / 2 + "px";
+    img.style.top = (window.innerHeight - baseHeight) / 2 + "px";
+    img.style.transform = "none";
+    img.style.maxWidth = "none";
+    img.style.maxHeight = "none";
+    img.style.objectFit = "contain";
+  }
+
+  document.addEventListener("click", function (event) {
+    const img = event.target.closest(".gallery .card img");
+
+    if (img) {
+      event.preventDefault();
+
+      if (img === activeImage) {
+        closeImage();
+      } else {
+        openImage(img);
+      }
+
+      return;
+    }
+
+    closeImage();
+  });
+
+  document.addEventListener("wheel", function (event) {
+    if (!activeImage) return;
+
+    event.preventDefault();
+
+    const direction = event.deltaY < 0 ? 1 : -1;
+    const nextZoom = Math.max(
+      minZoom,
+      Math.min(maxZoom, zoom + direction * zoomStep)
+    );
+
+    if (nextZoom === zoom) return;
+
+    const rect = activeImage.getBoundingClientRect();
+    const ratio = nextZoom / zoom;
+
+    const newLeft =
+      event.clientX - (event.clientX - rect.left) * ratio;
+
+    const newTop =
+      event.clientY - (event.clientY - rect.top) * ratio;
+
+    zoom = nextZoom;
+
+    activeImage.style.width = baseWidth * zoom + "px";
+    activeImage.style.height = baseHeight * zoom + "px";
+    activeImage.style.left = newLeft + "px";
+    activeImage.style.top = newTop + "px";
+  }, { passive: false });
+
+  // Drag the enlarged image with the mouse
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+  let imageLeft = 0;
+  let imageTop = 0;
+
+  document.addEventListener("mousedown", function (event) {
+    if (!activeImage || event.button !== 0) return;
+
+    isDragging = true;
+    startX = event.clientX;
+    startY = event.clientY;
+    imageLeft = parseFloat(activeImage.style.left) || 0;
+    imageTop = parseFloat(activeImage.style.top) || 0;
+
+    activeImage.style.cursor = "grabbing";
+    event.preventDefault();
+  });
+
+  document.addEventListener("mousemove", function (event) {
+    if (!isDragging || !activeImage) return;
+
+    activeImage.style.left =
+      imageLeft + event.clientX - startX + "px";
+
+    activeImage.style.top =
+      imageTop + event.clientY - startY + "px";
+  });
+
+  document.addEventListener("mouseup", function () {
+    isDragging = false;
+
+    if (activeImage) {
+      activeImage.style.cursor = "grab";
+    }
+  });
+
+  // Close the image when the Escape key is pressed
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeImage();
+    }
+  });
+
+})();
+</script>
+
+</body>
+</html>
