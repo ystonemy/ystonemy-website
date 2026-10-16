@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tulip | YstoneMy</title>
+  <title>Floral Ball | YstoneMy</title>
 
   <style>
     * {
@@ -18,6 +18,25 @@
       background: #faf9f6;
       line-height: 1.6;
     }
+    
+/* Product image zoom */
+.gallery .card img {
+  cursor: zoom-in;
+}
+
+.gallery .card img.enlarged {
+  position: fixed !important;
+  display: block !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: fill !important;
+  z-index: 2000 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: none !important;
+  cursor: grab;
+}
+
 
     /* ---------- Header（与首页一致） ---------- */
     header {
@@ -188,7 +207,7 @@
 
   <!-- Page Hero -->
   <section class="page-hero">
-    <h1>Tulip</h1>
+    <h1>Floral Ball</h1>
     <p>
      
   </section>
@@ -199,40 +218,56 @@
     <div class="gallery">
 
       <div class="card">
-        <img src="images/80tulip-fus1.jpg">
+        <img src="images/80-mossforest.jpg">
         <div class="card-content">
-          <h3>Tulip Fuchsia</h3>
-          <p>Code: 80Tulipfus.</p>
+          <h3>Moss Forest A</h3>
+          <p>Code: 80MF001.</p>
           <p>Size: 80mm diameter.</p>
+          <p>Material: Dry moss & leaves.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="images/80tulip-pkwh1.jpg">
+        <img src="images/80-mossforest2.jpg">
         <div class="card-content">
-          <h3>Tulip Pink White</h3>
-          <p>Code: 80Tulippkwh.</p>
+          <h3>Moss Forest B</h3>
+          <p>Code: 80MF002.</p>
           <p>Size: 80mm diameter.</p>
+          <p>Material: Dry moss & leaves.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="images/80tulip-org1.jpg">
+        <img src="images/80-tinygarden.jpg">
         <div class="card-content">
-          <h3>Tulip Orange</h3>
-          <p>Code: 80Tuliporg.</p>
+          <h3>Tiny Garden</h3>
+          <p>Code: 80Tingg001.</p>
           <p>Size: 80mm diameter.</p>
+          <p>Material: Dry moss & leaves.</p>
         </div>
       </div>
 
       <div class="card">
-        <img src="images/80tulip-whred1.jpg">
+        <img src="images/80-daisygarden.JPG">
         <div class="card-content">
-          <h3>Tulip White Red</h3>
-          <p>Code: 80Tulipwhred.</p>
+          <h3>Daisy Garden</h3>
+          <p>Code: 80Daisyg001.</p>
           <p>Size: 80mm diameter.</p>
+          <p>Material: Daisy & dry moss.</p>
         </div>
       </div>
+
+      <div class="card">
+       <img src="images/50YJ2.jpg"
+     alt="Tiny Garden Collection 1">
+
+      <div class="card-content">
+        <h3>Tiny Garden Collection 1</h3>
+        <p>Code: 50YJ2.</p>
+        <p>Size: 50x50x50mm.</p>
+        <p>Material: Dry moss, flowers, seashell, leaves & stone.</p>
+      </div>
+    </div>
 
       <div class="card">
         <img src="images/80tulip-ylw1.jpg">
@@ -267,6 +302,162 @@
   <footer>
     © 2026 YstoneMy. All Rights Reserved.
   </footer>
+
+<script>
+(function () {
+  let activeImage = null;
+  let zoom = 1;
+  let baseWidth = 0;
+  let baseHeight = 0;
+
+  const minZoom = 1;
+  const maxZoom = 5;
+  const zoomStep = 0.5;
+
+  function closeImage() {
+    if (!activeImage) return;
+
+    activeImage.classList.remove("enlarged");
+
+    [
+      "position", "left", "top", "width", "height",
+      "transform", "zIndex", "maxWidth", "maxHeight",
+      "objectFit", "margin"
+    ].forEach(function (property) {
+      activeImage.style[property] = "";
+    });
+
+    activeImage = null;
+    zoom = 1;
+  }
+
+  function openImage(img) {
+    closeImage();
+
+    if (!img.complete || !img.naturalWidth) return;
+
+    activeImage = img;
+    zoom = 1;
+
+    const fit = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.85 / img.naturalHeight,
+      1
+    );
+
+    baseWidth = img.naturalWidth * fit;
+    baseHeight = img.naturalHeight * fit;
+
+    img.classList.add("enlarged");
+    img.style.position = "fixed";
+    img.style.width = baseWidth + "px";
+    img.style.height = baseHeight + "px";
+    img.style.left = (window.innerWidth - baseWidth) / 2 + "px";
+    img.style.top = (window.innerHeight - baseHeight) / 2 + "px";
+    img.style.transform = "none";
+    img.style.maxWidth = "none";
+    img.style.maxHeight = "none";
+    img.style.objectFit = "contain";
+  }
+
+ 
+document.addEventListener("click", function (event) {
+  const img = event.target.closest(".gallery .card img");
+
+  if (img) {
+    event.preventDefault();
+
+    // Open a new image, but keep the current image enlarged
+    // when clicking or finishing a drag on the same image.
+    if (img !== activeImage) {
+      openImage(img);
+    }
+
+    return;
+  }
+
+  // Close the enlarged image only when clicking outside it.
+  closeImage();
+});
+
+
+  document.addEventListener("wheel", function (event) {
+    if (!activeImage) return;
+
+    event.preventDefault();
+
+    const direction = event.deltaY < 0 ? 1 : -1;
+    const nextZoom = Math.max(
+      minZoom,
+      Math.min(maxZoom, zoom + direction * zoomStep)
+    );
+
+    if (nextZoom === zoom) return;
+
+    const rect = activeImage.getBoundingClientRect();
+    const ratio = nextZoom / zoom;
+
+    const newLeft =
+      event.clientX - (event.clientX - rect.left) * ratio;
+
+    const newTop =
+      event.clientY - (event.clientY - rect.top) * ratio;
+
+    zoom = nextZoom;
+
+    activeImage.style.width = baseWidth * zoom + "px";
+    activeImage.style.height = baseHeight * zoom + "px";
+    activeImage.style.left = newLeft + "px";
+    activeImage.style.top = newTop + "px";
+  }, { passive: false });
+
+  // Drag the enlarged image with the mouse
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+  let imageLeft = 0;
+  let imageTop = 0;
+
+  document.addEventListener("mousedown", function (event) {
+    if (!activeImage || event.button !== 0) return;
+
+    isDragging = true;
+    startX = event.clientX;
+    startY = event.clientY;
+    imageLeft = parseFloat(activeImage.style.left) || 0;
+    imageTop = parseFloat(activeImage.style.top) || 0;
+
+    activeImage.style.cursor = "grabbing";
+    event.preventDefault();
+  });
+
+  document.addEventListener("mousemove", function (event) {
+    if (!isDragging || !activeImage) return;
+
+    activeImage.style.left =
+      imageLeft + event.clientX - startX + "px";
+
+    activeImage.style.top =
+      imageTop + event.clientY - startY + "px";
+  });
+
+  document.addEventListener("mouseup", function () {
+    isDragging = false;
+
+    if (activeImage) {
+      activeImage.style.cursor = "grab";
+    }
+  });
+
+  // Close the image when the Escape key is pressed
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeImage();
+    }
+  });
+
+})();
+</script>
 
 </body>
 </html>
