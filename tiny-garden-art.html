@@ -360,23 +360,26 @@
     img.style.objectFit = "contain";
   }
 
-  document.addEventListener("click", function (event) {
-    const img = event.target.closest(".gallery .card img");
+ 
+document.addEventListener("click", function (event) {
+  const img = event.target.closest(".gallery .card img");
 
-    if (img) {
-      event.preventDefault();
+  if (img) {
+    event.preventDefault();
 
-      if (img === activeImage) {
-        closeImage();
-      } else {
-        openImage(img);
-      }
-
-      return;
+    // Open a new image, but keep the current image enlarged
+    // when clicking or finishing a drag on the same image.
+    if (img !== activeImage) {
+      openImage(img);
     }
 
-    closeImage();
-  });
+    return;
+  }
+
+  // Close the enlarged image only when clicking outside it.
+  closeImage();
+});
+
 
   document.addEventListener("wheel", function (event) {
     if (!activeImage) return;
