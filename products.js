@@ -110,4 +110,92 @@ const products = [
     image: "images/g26a-skull-007-picture.jpg",
     categories: ["Skull", "Botanical","Floral"]
   },
+  {
+    name: "80 Tulip Orange",
+    code: "80tuliporg",
+    Size："80mm diameter",
+    material: "Tulip",
+    image: "images/80tulip-org3.jpg",
+    categories: ["ball", "floral ball art"]
+  },
+  {
+    name: "80 Fuchsia White",
+    code: "80tulipfuwh",
+    Size："80mm diameter",
+    material: "Tulip",
+    image: "images/80tulip-fus3.jpg",
+    categories: ["ball", "floral ball art"]
+  },
+   {
+    name: "80 Tulip Pink White",
+    code: "80tulippkwh",
+    Size："80mm diameter",
+    material: "Tulip",
+    image: "images/80tulip-whred4.jpg",
+    categories: ["ball", "floral ball art"]
+  },
+   {
+    name: "80 Tulip Yellow",
+    code: "80tulipylw",
+    Size："80mm diameter",
+    material: "Tulip",
+    image: "images/80tulip-ylw2.jpg",
+    categories: ["ball", "floral ball art"]
+  },
+  {
+    name: "80 Tulip Purple",
+    code: "80tulippur",
+    Size："80mm diameter",
+    material: "Tulip",
+    image: "images/80tulip-pur4.jpg",
+    categories: ["ball", "floral ball art"]
+  },
+   {
+    name: "80 Hydrangea Blue",
+    code: "80Bluhydra",
+    Size："80mm diameter",
+    material: "Hydrangea",
+    image: "images/80ball-bluehydrangea.jpg",
+    categories: ["ball", "floral ball art"]
+  },
+   {
+    name: "80 Lace Flower",
+    code: "80lace",
+    Size："80mm diameter",
+    material: "Lace Flower",
+    image: "images/80ball-lace.jpg",
+    categories: ["ball", "floral ball art"]
+  },
+   {
+    name: "65 Dandelion",
+    code: "65ballddl",
+    Size："65mm diameter",
+    material: "Dandelion",
+    image: "images/65ball-dandelion.jpg",
+    categories: ["ball", "floral ball art"]
+  },
+   {
+    name: "65 Orchid",
+    code: "65ballorchid",
+    Size："65mm diameter",
+    material: "Orchid",
+    image: "images/65ball-orchid.jpg",
+    categories: ["ball", "floral ball art"]
+  },
+  {
+    name: "65 Hydrangea Pink",
+    code: "65pkhydra",
+    Size："65mm diameter",
+    material: "Hydrangea",
+    image: "images/65ball-pinkhydrangea.jpg",
+    categories: ["ball", "floral ball art"]
+  },
+  {
+    name: "65 Brazilian Star Flower",
+    code: "65starflo",
+    Size："65mm diameter",
+    material: "Brazilian Star Flowers",
+    image: "images/65ball-brazilianhillflower.jpg",
+    categories: ["ball", "floral ball art"]
+  },
 ];
