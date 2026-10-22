@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tiny Garden Art | YstoneMy</title>
+  <title>Tiny Garden | YstoneMy</title>
 
   <style>
     * {
@@ -35,15 +35,6 @@
   padding: 0 !important;
   transition: none !important;
   cursor: grab;
-}
-    
-/* Background behind the enlarged image */
-.image-zoom-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 1999;
-  cursor: zoom-out;
 }
 
 
@@ -226,6 +217,7 @@
       <section class="gallery-section">
       <div class="gallery" id="product-container">
     </div>
+    
   </section>
 
 
@@ -241,13 +233,12 @@
     © 2026 YstoneMy. All Rights Reserved.
   </footer>
 
-
-<!-- Load the product database -->
+  <!-- Load the product database -->
 <script src="products.js"></script>
 
 <!-- Generate product cards -->
 <script>
-const category = "Tiny Garden";
+const category = "Skull";
 
 const container = document.getElementById("product-container");
 
@@ -332,7 +323,7 @@ if (filteredProducts.length === 0) {
     img.style.objectFit = "contain";
   }
 
-  
+ 
 document.addEventListener("click", function (event) {
   const img = event.target.closest(".product-container .card img");
 
@@ -433,5 +424,4 @@ document.addEventListener("click", function (event) {
 
 </body>
 </html>
-
   
