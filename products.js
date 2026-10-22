@@ -2,45 +2,34 @@ const products = [
   {
     name: "65 Ball Shell A",
     code: "65BO0001",
+    Size："65mm diameter",
+    material: "Shell, CrystalStone",
     image: "images/65ball-shell-a.jpg",
-    categories: ["65", "Ocean"]
+    categories: ["65", "Ocean Park"]
   },
   {
     name: "65 Ball Seastar A",
     code: "65BO0002",
+    Size："65mm diameter",
+    material: "Shell, Seastar",
     image: "images/65ball-shell-b.jpg",
-    categories: ["65", "Ocean"]
+    categories: ["65","Ocean Park"]
   },
   {
-    name: "80 Ball Moss Forest C",
-    code: "80MF003",
+    name: "80 Ball Moss Forest A",
+    code: "80MF001",
     size: "80mm diameter",
     image: "images/80ball-moss-a.jpg",
     categories: ["80", "Tiny Garden"]
   },
   {
-    name: "80 Ball Moss Forest D",
-    code: "80MF004",
+    name: "80 Ball Moss Forest B",
+    code: "80MF002",
     size: "80mm diameter",
+    material: "Dry moss & leaves",
     image: "images/80ball-moss-b.jpg",
-    categories: ["80", "Tiny Garden"]
+    categories: ["80", "Tiny Garden",]
   },
-  {
-   name: "Moss Forest A",
-   code: "80MF001",
-   size: "80mm diameter",
-   material: "Dry moss & leaves",
-   image: "images/80-mossforest.jpg",
-   categories: ["Tiny Garden", "Botanical"]
-},
-{
-  name: "Moss Forest B",
-  code: "80MF002",
-  size: "80mm diameter",
-  material: "Dry moss & leaves",
-  image: "images/80-mossforest2.jpg",
-  categories: ["Tiny Garden", "Botanical"]
-},
 {
   name: "Tiny Garden",
   code: "80Tingg001",
