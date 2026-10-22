@@ -3,7 +3,7 @@ const products = [
     name: "65 Ball Shell A",
     code: "65BO0001",
     size: "65mm diameter",
-    material: "Shell, CrystalStone",
+    material: "Shell, Crystal stone",
     image: "images/65ball-shell-a.jpg",
     categories: ["ball", "Ocean Park"]
   },
@@ -16,18 +16,43 @@ const products = [
     categories: ["ball","Ocean Park"]
   },
   {
+    name: "80 Ball Shell A",
+    code: "80BO0001",
+    size: "80mm diameter",
+    material: "Shell, Crystal stone",
+    image: "images/80ball-shell-a.jpg",
+    categories: ["ball","Ocean Park"]
+  },
+  {
+    name: "80 Ball Seastar A",
+    code: "80BO0002",
+    size: "80mm diameter",
+    material: "Shell, Seastar",
+    image: "images/80ball-shell-b.jpg",
+    categories: ["ball","Ocean Park"]
+  },
+  {
     name: "80 Ball Moss Forest A",
     code: "80MF001",
     size: "80mm diameter",
     image: "images/80ball-moss-a.jpg",
     categories: ["ball", "Tiny Garden"]
   },
+
   {
     name: "80 Ball Moss Forest B",
     code: "80MF002",
     size: "80mm diameter",
     material: "Dry moss & leaves",
     image: "images/80ball-moss-b.jpg",
+    categories: ["ball", "Tiny Garden",]
+  },
+  {
+    name: "80 Ball Moss Forest C",
+    code: "80MF003",
+    size: "80mm diameter",
+    material: "Dry moss & leaves",
+    image: "images/80ball-moss-c.jpg",
     categories: ["ball", "Tiny Garden",]
   },
 {
@@ -198,4 +223,5 @@ const products = [
     image: "images/65ball-brazilianhillflower.jpg",
     categories: ["ball", "floral ball art"]
   },
+  
 ];
