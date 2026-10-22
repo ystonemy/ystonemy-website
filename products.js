@@ -12,9 +12,17 @@ const products = [
     categories: ["65", "Ocean"]
   },
   {
-    name: "Floral Skull",
-    code: "FS001",
-    image: "images/floral-skull.jpg",
-    categories: ["Botanical", "Home Decor"]
+    name: "80 Ball Moss Forest C",
+    code: "80MF003",
+    size: "80mm diameter",
+    image: "images/80ball-moss-a.jpg",
+    categories: ["80", "Tiny Garden"]
+  },
+  {
+    name: "80 Ball Moss Forest D",
+    code: "80MF004",
+    size: "80mm diameter",
+    image: "images/80ball-moss-b.jpg",
+    categories: ["80", "Tiny Garden"]
   }
 ];
