@@ -50,6 +50,41 @@
       color: #888;
     }
 
+     /* Search bar */
+.site-search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-search input {
+  width: 180px;
+  padding: 9px 12px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.site-search button {
+  padding: 9px 12px;
+  border: none;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.site-search button:hover {
+  background: #555;
+}
+
+@media (max-width: 768px) {
+  .site-search input {
+    width: 200px;
+  }
+}
+
+
     /* ---------- Button ---------- */
     .button {
       display: inline-block;
@@ -174,16 +209,28 @@
 
   <!-- Header（与首页一致，链接指向首页锚点） -->
   <header>
-    <div class="logo">YstoneMy</div>
+  <div class="logo">YstoneMy</div>
 
-    <nav>
-      <a href="https://ystonemy.github.io/ystonemy-website/">Home</a>
-      <a href="index.html#collections">Collections</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#custom">Custom</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#collections">Collections</a>
+    <a href="#about">About</a>
+    <a href="#custom">Custom</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <form class="site-search" action="search.html" method="get">
+    <input
+      type="search"
+      name="q"
+      placeholder="Search products..."
+      aria-label="Search products"
+      required
+    >
+    <button type="submit">Search</button>
+  </form>
+</header>
+
 
 
   <!-- Page Hero -->
