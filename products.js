@@ -24,7 +24,7 @@ const products = [
     size: "80mm diameter",
     image: "images/80ball-moss-b.jpg",
     categories: ["80", "Tiny Garden"]
-  }，
+  },
   {
    name: "Moss Forest A",
    code: "80MF001",
