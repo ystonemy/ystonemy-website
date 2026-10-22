@@ -2,7 +2,7 @@ const products = [
   {
     name: "65 Ball Shell A",
     code: "65BO0001",
-    Size："65mm diameter",
+    size: "65mm diameter",
     material: "Shell, CrystalStone",
     image: "images/65ball-shell-a.jpg",
     categories: ["ball", "Ocean Park"]
@@ -10,7 +10,7 @@ const products = [
   {
     name: "65 Ball Seastar A",
     code: "65BO0002",
-    Size："65mm diameter",
+    size: "65mm diameter",
     material: "Shell, Seastar",
     image: "images/65ball-shell-b.jpg",
     categories: ["ball","Ocean Park"]
@@ -57,7 +57,7 @@ const products = [
   {
     name: "50 Skull Floral ",
     code: "SK50-001",
-    Size："70x50mm",
+    size: "70x50mm",
     material: "Floral",
     image: "images/g26a-skull-001-picture.jpg",
     categories: ["Skull", "Botanical","Floral"]
@@ -65,7 +65,7 @@ const products = [
   {
     name: "50 Skull Floral ",
     code: "SK50-002",
-    Size："70x50mm",
+    size: "70x50mm",
     material: "Floral",
     image: "images/g26a-skull-002-picture.jpg",
     categories: ["Skull", "Botanical","Floral"]
@@ -73,7 +73,7 @@ const products = [
   {
     name: "50 Skull Floral ",
     code: "SK50-003",
-    Size："70x50mm",
+    size: "70x50mm",
     material: "Floral",
     image: "images/g26a-skull-003-picture.jpg",
     categories: ["Skull", "Botanical","Floral"]
@@ -81,7 +81,7 @@ const products = [
   {
     name: "50 Skull Floral ",
     code: "SK50-004",
-    Size："70x50mm",
+    size: "70x50mm",
     material: "Floral",
     image: "images/g26a-skull-004-picture.jpg",
     categories: ["Skull", "Botanical","Floral"]
@@ -89,7 +89,7 @@ const products = [
   {
     name: "105 Skull Floral ",
     code: "SK105-001",
-    Size："75x105mm",
+    size: "75x105mm",
     material: "Floral",
     image: "images/g26a-skull-005-picture.jpg",
     categories: ["Skull", "Botanical","Floral"]
@@ -97,7 +97,7 @@ const products = [
   {
     name: "105 Skull Floral ",
     code: "SK105-002",
-    Size："75x105mm",
+   size: "75x105mm",
     material: "Floral",
     image: "images/g26a-skull-006-picture.jpg",
     categories: ["Skull", "Botanical","Floral"]
@@ -105,7 +105,7 @@ const products = [
    {
     name: "105 Skull Floral ",
     code: "SK105-003",
-    Size："75x105mm",
+    size: "75x105mm",
     material: "Floral",
     image: "images/g26a-skull-007-picture.jpg",
     categories: ["Skull", "Botanical","Floral"]
@@ -113,7 +113,7 @@ const products = [
   {
     name: "80 Tulip Orange",
     code: "80tuliporg",
-    Size："80mm diameter",
+    size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-org3.jpg",
     categories: ["ball", "floral ball art"]
@@ -121,7 +121,7 @@ const products = [
   {
     name: "80 Fuchsia White",
     code: "80tulipfuwh",
-    Size："80mm diameter",
+   size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-fus3.jpg",
     categories: ["ball", "floral ball art"]
@@ -129,7 +129,7 @@ const products = [
    {
     name: "80 Tulip Pink White",
     code: "80tulippkwh",
-    Size："80mm diameter",
+    size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-whred4.jpg",
     categories: ["ball", "floral ball art"]
@@ -137,7 +137,7 @@ const products = [
    {
     name: "80 Tulip Yellow",
     code: "80tulipylw",
-    Size："80mm diameter",
+    size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-ylw2.jpg",
     categories: ["ball", "floral ball art"]
@@ -145,7 +145,7 @@ const products = [
   {
     name: "80 Tulip Purple",
     code: "80tulippur",
-    Size："80mm diameter",
+    size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-pur4.jpg",
     categories: ["ball", "floral ball art"]
@@ -153,7 +153,7 @@ const products = [
    {
     name: "80 Hydrangea Blue",
     code: "80Bluhydra",
-    Size："80mm diameter",
+    size: "80mm diameter",
     material: "Hydrangea",
     image: "images/80ball-bluehydrangea.jpg",
     categories: ["ball", "floral ball art"]
@@ -161,7 +161,7 @@ const products = [
    {
     name: "80 Lace Flower",
     code: "80lace",
-    Size："80mm diameter",
+    size: "80mm diameter",
     material: "Lace Flower",
     image: "images/80ball-lace.jpg",
     categories: ["ball", "floral ball art"]
@@ -169,7 +169,7 @@ const products = [
    {
     name: "65 Dandelion",
     code: "65ballddl",
-    Size："65mm diameter",
+    size: "65mm diameter",
     material: "Dandelion",
     image: "images/65ball-dandelion.jpg",
     categories: ["ball", "floral ball art"]
@@ -177,7 +177,7 @@ const products = [
    {
     name: "65 Orchid",
     code: "65ballorchid",
-    Size："65mm diameter",
+    size: "65mm diameter",
     material: "Orchid",
     image: "images/65ball-orchid.jpg",
     categories: ["ball", "floral ball art"]
@@ -185,7 +185,7 @@ const products = [
   {
     name: "65 Hydrangea Pink",
     code: "65pkhydra",
-    Size："65mm diameter",
+    size: "65mm diameter",
     material: "Hydrangea",
     image: "images/65ball-pinkhydrangea.jpg",
     categories: ["ball", "floral ball art"]
@@ -193,7 +193,7 @@ const products = [
   {
     name: "65 Brazilian Star Flower",
     code: "65starflo",
-    Size："65mm diameter",
+    size: "65mm diameter",
     material: "Brazilian Star Flowers",
     image: "images/65ball-brazilianhillflower.jpg",
     categories: ["ball", "floral ball art"]
