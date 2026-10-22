@@ -50,6 +50,41 @@
       color: #888;
     }
 
+     /* Search bar */
+.site-search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-search input {
+  width: 180px;
+  padding: 9px 12px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.site-search button {
+  padding: 9px 12px;
+  border: none;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.site-search button:hover {
+  background: #555;
+}
+
+@media (max-width: 768px) {
+  .site-search input {
+    width: 200px;
+  }
+}
+
+
     /* ---------- Button ---------- */
     .button {
       display: inline-block;
