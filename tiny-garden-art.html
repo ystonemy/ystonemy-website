@@ -269,24 +269,6 @@
       </div>
     </div>
 
-      <div class="card">
-        <img src="images/80tulip-ylw1.jpg">
-        <div class="card-content">
-          <h3>Tulip Yellow</h3>
-          <p>Code: 80Tulipylw.</p>
-          <p>Size: 80mm diameter.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="images/80tulip-pur1.jpg">
-        <div class="card-content">
-          <h3>Tulip Purple</h3>
-          <p>Code: 80Tulippur.</p>
-          <p>Size: 80mm diameter.</p>
-        </div>
-      </div>
-      
     </div>
   </section>
 
@@ -318,6 +300,12 @@
     if (!activeImage) return;
 
     activeImage.classList.remove("enlarged");
+
+    const category = "Tiny Garden";
+
+    const filteredProducts = products.filter(
+    product => product.categories.includes(category)
+);
 
     [
       "position", "left", "top", "width", "height",
