@@ -36,6 +36,15 @@
   transition: none !important;
   cursor: grab;
 }
+    
+/* Background behind the enlarged image */
+.image-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1999;
+  cursor: zoom-out;
+}
 
 
     /* ---------- Header（与首页一致） ---------- */
@@ -267,11 +276,162 @@ if (filteredProducts.length === 0) {
 
 <!-- Keep your original image zoom code here -->
 <script>
+
+<script>
 (function () {
-  // Paste your complete original image zoom code here.
-  // Keep all its functions and event listeners.
+  let activeImage = null;
+  let overlay = null;
+  let scale = 1;
+  let offsetX = 0;
+  let offsetY = 0;
+  let dragging = false;
+  let startX = 0;
+  let startY = 0;
+  let startOffsetX = 0;
+  let startOffsetY = 0;
+
+  function updateImage() {
+    if (!activeImage) return;
+
+    activeImage.style.width =
+      (activeImage.naturalWidth * scale) + "px";
+    activeImage.style.height =
+      (activeImage.naturalHeight * scale) + "px";
+
+    activeImage.style.left =
+      (window.innerWidth / 2 - activeImage.naturalWidth * scale / 2 + offsetX) + "px";
+    activeImage.style.top =
+      (window.innerHeight / 2 - activeImage.naturalHeight * scale / 2 + offsetY) + "px";
+  }
+
+  function closeImage() {
+    if (!activeImage) return;
+
+    activeImage.classList.remove("enlarged");
+    activeImage.style.removeProperty("width");
+    activeImage.style.removeProperty("height");
+    activeImage.style.removeProperty("left");
+    activeImage.style.removeProperty("top");
+    activeImage.style.removeProperty("transform");
+
+    if (overlay) overlay.remove();
+
+    activeImage = null;
+    overlay = null;
+    scale = 1;
+    offsetX = 0;
+    offsetY = 0;
+    dragging = false;
+  }
+
+  function openImage(img) {
+    if (activeImage) closeImage();
+
+    activeImage = img;
+    scale = 1;
+    offsetX = 0;
+    offsetY = 0;
+
+    overlay = document.createElement("div");
+    overlay.className = "image-zoom-overlay";
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener("click", closeImage);
+
+    activeImage.classList.add("enlarged");
+    activeImage.style.width = activeImage.naturalWidth + "px";
+    activeImage.style.height = activeImage.naturalHeight + "px";
+    activeImage.style.objectFit = "contain";
+
+    updateImage();
+  }
+
+  document.addEventListener("click", function (event) {
+    const img = event.target.closest(".gallery .card img");
+
+    if (img && !activeImage) {
+      if (!img.complete || !img.naturalWidth) {
+        img.addEventListener("load", function onLoad() {
+          img.removeEventListener("load", onLoad);
+          openImage(img);
+        });
+        return;
+      }
+
+      openImage(img);
+    } else if (activeImage && event.target === activeImage) {
+      // Keep the enlarged image open when it is clicked.
+      event.stopPropagation();
+    }
+  });
+
+  document.addEventListener("wheel", function (event) {
+    if (!activeImage) return;
+
+    event.preventDefault();
+
+    const oldScale = scale;
+    const factor = event.deltaY < 0 ? 1.15 : 1 / 1.15;
+    scale = Math.min(5, Math.max(1, scale * factor));
+
+    const rect = activeImage.getBoundingClientRect();
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    const imageX = (mouseX - rect.left - offsetX) / oldScale;
+    const imageY = (mouseY - rect.top - offsetY) / oldScale;
+
+    offsetX += (mouseX - rect.left) * (1 - scale / oldScale);
+    offsetY += (mouseY - rect.top) * (1 - scale / oldScale);
+
+    if (scale === 1) {
+      offsetX = 0;
+      offsetY = 0;
+    }
+
+    updateImage();
+  }, { passive: false });
+
+  document.addEventListener("mousedown", function (event) {
+    if (!activeImage || event.target !== activeImage) return;
+
+    dragging = true;
+    startX = event.clientX;
+    startY = event.clientY;
+    startOffsetX = offsetX;
+    startOffsetY = offsetY;
+
+    activeImage.style.cursor = "grabbing";
+    event.preventDefault();
+  });
+
+  document.addEventListener("mousemove", function (event) {
+    if (!dragging || !activeImage) return;
+
+    offsetX = startOffsetX + event.clientX - startX;
+    offsetY = startOffsetY + event.clientY - startY;
+
+    updateImage();
+  });
+
+  document.addEventListener("mouseup", function () {
+    dragging = false;
+
+    if (activeImage) {
+      activeImage.style.cursor = "grab";
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeImage();
+  });
+
+  window.addEventListener("resize", function () {
+    if (activeImage) updateImage();
+  });
 })();
 </script>
+
 
 </body>
 </html>
