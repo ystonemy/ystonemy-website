@@ -5,7 +5,7 @@ const products = [
     Size："65mm diameter",
     material: "Shell, CrystalStone",
     image: "images/65ball-shell-a.jpg",
-    categories: ["65", "Ocean Park"]
+    categories: ["ball", "Ocean Park"]
   },
   {
     name: "65 Ball Seastar A",
@@ -13,14 +13,14 @@ const products = [
     Size："65mm diameter",
     material: "Shell, Seastar",
     image: "images/65ball-shell-b.jpg",
-    categories: ["65","Ocean Park"]
+    categories: ["ball","Ocean Park"]
   },
   {
     name: "80 Ball Moss Forest A",
     code: "80MF001",
     size: "80mm diameter",
     image: "images/80ball-moss-a.jpg",
-    categories: ["80", "Tiny Garden"]
+    categories: ["ball", "Tiny Garden"]
   },
   {
     name: "80 Ball Moss Forest B",
@@ -28,7 +28,7 @@ const products = [
     size: "80mm diameter",
     material: "Dry moss & leaves",
     image: "images/80ball-moss-b.jpg",
-    categories: ["80", "Tiny Garden",]
+    categories: ["ball", "Tiny Garden",]
   },
 {
   name: "Tiny Garden",
@@ -53,6 +53,61 @@ const products = [
   material: "Dry moss, flowers, seashell, leaves & stone",
   image: "images/50YJ2.jpg",
   categories: ["Tiny Garden", "Botanical"]
-}
-
+},
+  {
+    name: "50 Skull Floral ",
+    code: "SK50-001",
+    Size："70x50mm",
+    material: "Floral",
+    image: "images/g26a-skull-001-picture.jpg",
+    categories: ["Skull", "Botanical","Floral"]
+  },
+  {
+    name: "50 Skull Floral ",
+    code: "SK50-002",
+    Size："70x50mm",
+    material: "Floral",
+    image: "images/g26a-skull-002-picture.jpg",
+    categories: ["Skull", "Botanical","Floral"]
+  },
+  {
+    name: "50 Skull Floral ",
+    code: "SK50-003",
+    Size："70x50mm",
+    material: "Floral",
+    image: "images/g26a-skull-003-picture.jpg",
+    categories: ["Skull", "Botanical","Floral"]
+  },
+  {
+    name: "50 Skull Floral ",
+    code: "SK50-004",
+    Size："70x50mm",
+    material: "Floral",
+    image: "images/g26a-skull-004-picture.jpg",
+    categories: ["Skull", "Botanical","Floral"]
+  },
+  {
+    name: "105 Skull Floral ",
+    code: "SK105-001",
+    Size："75x105mm",
+    material: "Floral",
+    image: "images/g26a-skull-005-picture.jpg",
+    categories: ["Skull", "Botanical","Floral"]
+  },
+  {
+    name: "105 Skull Floral ",
+    code: "SK105-002",
+    Size："75x105mm",
+    material: "Floral",
+    image: "images/g26a-skull-006-picture.jpg",
+    categories: ["Skull", "Botanical","Floral"]
+  },
+   {
+    name: "105 Skull Floral ",
+    code: "SK105-003",
+    Size："75x105mm",
+    material: "Floral",
+    image: "images/g26a-skull-007-picture.jpg",
+    categories: ["Skull", "Botanical","Floral"]
+  },
 ];
