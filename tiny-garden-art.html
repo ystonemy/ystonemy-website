@@ -36,6 +36,13 @@
   transition: none !important;
   cursor: grab;
 }
+    .image-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1999;
+  cursor: zoom-out;
+}
 
 
     /* ---------- Header（与首页一致） ---------- */
@@ -238,7 +245,7 @@
 
 <!-- Generate product cards -->
 <script>
-const category = "Skull";
+const category = "Tiny Garden";
 
 const container = document.getElementById("product-container");
 
