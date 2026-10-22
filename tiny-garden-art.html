@@ -275,155 +275,159 @@ if (filteredProducts.length === 0) {
 </script>
 
 
-<!-- Image zoom functionality -->
 <script>
 (function () {
   let activeImage = null;
-  let overlay = null;
-  let scale = 1;
-  let offsetX = 0;
-  let offsetY = 0;
-  let dragging = false;
-  let startX = 0;
-  let startY = 0;
-  let startOffsetX = 0;
-  let startOffsetY = 0;
+  let zoom = 1;
+  let baseWidth = 0;
+  let baseHeight = 0;
 
-  function updateImage() {
-    if (!activeImage) return;
-
-    const width = activeImage.naturalWidth * scale;
-    const height = activeImage.naturalHeight * scale;
-
-    activeImage.style.width = width + "px";
-    activeImage.style.height = height + "px";
-    activeImage.style.left =
-      (window.innerWidth - width) / 2 + offsetX + "px";
-    activeImage.style.top =
-      (window.innerHeight - height) / 2 + offsetY + "px";
-  }
+  const minZoom = 1;
+  const maxZoom = 5;
+  const zoomStep = 0.5;
 
   function closeImage() {
     if (!activeImage) return;
 
     activeImage.classList.remove("enlarged");
-    activeImage.removeAttribute("style");
 
-    if (overlay) overlay.remove();
+    [
+      "position", "left", "top", "width", "height",
+      "transform", "zIndex", "maxWidth", "maxHeight",
+      "objectFit", "margin"
+    ].forEach(function (property) {
+      activeImage.style[property] = "";
+    });
 
     activeImage = null;
-    overlay = null;
-    scale = 1;
-    offsetX = 0;
-    offsetY = 0;
-    dragging = false;
+    zoom = 1;
   }
 
   function openImage(img) {
-    if (activeImage) closeImage();
+    closeImage();
+
+    if (!img.complete || !img.naturalWidth) return;
 
     activeImage = img;
-    scale = 1;
-    offsetX = 0;
-    offsetY = 0;
+    zoom = 1;
 
-    overlay = document.createElement("div");
-    overlay.className = "image-zoom-overlay";
-    document.body.appendChild(overlay);
-    overlay.addEventListener("click", closeImage);
+    const fit = Math.min(
+      window.innerWidth * 0.9 / img.naturalWidth,
+      window.innerHeight * 0.85 / img.naturalHeight,
+      1
+    );
 
-    activeImage.classList.add("enlarged");
-    activeImage.style.objectFit = "contain";
-    activeImage.style.maxWidth = "none";
-    activeImage.style.maxHeight = "none";
+    baseWidth = img.naturalWidth * fit;
+    baseHeight = img.naturalHeight * fit;
 
-    updateImage();
+    img.classList.add("enlarged");
+    img.style.position = "fixed";
+    img.style.width = baseWidth + "px";
+    img.style.height = baseHeight + "px";
+    img.style.left = (window.innerWidth - baseWidth) / 2 + "px";
+    img.style.top = (window.innerHeight - baseHeight) / 2 + "px";
+    img.style.transform = "none";
+    img.style.maxWidth = "none";
+    img.style.maxHeight = "none";
+    img.style.objectFit = "contain";
   }
 
-  document.addEventListener("click", function (event) {
-    const img = event.target.closest(".gallery .card img");
+  
+document.addEventListener("click", function (event) {
+  const img = event.target.closest(".gallery .card img");
 
-    if (img && !activeImage) {
-      if (img.naturalWidth) {
-        openImage(img);
-      } else {
-        img.addEventListener("load", function onLoad() {
-          img.removeEventListener("load", onLoad);
-          openImage(img);
-        });
-      }
+  if (img) {
+    event.preventDefault();
+
+    // Open a new image, but keep the current image enlarged
+    // when clicking or finishing a drag on the same image.
+    if (img !== activeImage) {
+      openImage(img);
     }
-  });
+
+    return;
+  }
+
+  // Close the enlarged image only when clicking outside it.
+  closeImage();
+});
+
 
   document.addEventListener("wheel", function (event) {
     if (!activeImage) return;
 
     event.preventDefault();
 
-    const oldScale = scale;
+    const direction = event.deltaY < 0 ? 1 : -1;
+    const nextZoom = Math.max(
+      minZoom,
+      Math.min(maxZoom, zoom + direction * zoomStep)
+    );
+
+    if (nextZoom === zoom) return;
+
     const rect = activeImage.getBoundingClientRect();
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
-    const factor = event.deltaY < 0 ? 1.15 : 1 / 1.15;
+    const ratio = nextZoom / zoom;
 
-    const newScale = Math.min(5, Math.max(1, scale * factor));
+    const newLeft =
+      event.clientX - (event.clientX - rect.left) * ratio;
 
-    if (newScale === scale) return;
+    const newTop =
+      event.clientY - (event.clientY - rect.top) * ratio;
 
-    const imagePointX = (mouseX - rect.left) / oldScale;
-    const imagePointY = (mouseY - rect.top) / oldScale;
+    zoom = nextZoom;
 
-    scale = newScale;
-
-    offsetX = mouseX -
-      (window.innerWidth - activeImage.naturalWidth * scale) / 2 -
-      imagePointX * scale;
-
-    offsetY = mouseY -
-      (window.innerHeight - activeImage.naturalHeight * scale) / 2 -
-      imagePointY * scale;
-
-    if (scale === 1) {
-      offsetX = 0;
-      offsetY = 0;
-    }
-
-    updateImage();
+    activeImage.style.width = baseWidth * zoom + "px";
+    activeImage.style.height = baseHeight * zoom + "px";
+    activeImage.style.left = newLeft + "px";
+    activeImage.style.top = newTop + "px";
   }, { passive: false });
 
-  document.addEventListener("mousedown", function (event) {
-    if (!activeImage || event.target !== activeImage) return;
+  // Drag the enlarged image with the mouse
+  let isDragging = false;
+  let startX = 0;
+  let startY = 0;
+  let imageLeft = 0;
+  let imageTop = 0;
 
-    dragging = true;
+  document.addEventListener("mousedown", function (event) {
+    if (!activeImage || event.button !== 0) return;
+
+    isDragging = true;
     startX = event.clientX;
     startY = event.clientY;
-    startOffsetX = offsetX;
-    startOffsetY = offsetY;
-    activeImage.style.cursor = "grabbing";
+    imageLeft = parseFloat(activeImage.style.left) || 0;
+    imageTop = parseFloat(activeImage.style.top) || 0;
 
+    activeImage.style.cursor = "grabbing";
     event.preventDefault();
   });
 
   document.addEventListener("mousemove", function (event) {
-    if (!dragging || !activeImage) return;
+    if (!isDragging || !activeImage) return;
 
-    offsetX = startOffsetX + event.clientX - startX;
-    offsetY = startOffsetY + event.clientY - startY;
-    updateImage();
+    activeImage.style.left =
+      imageLeft + event.clientX - startX + "px";
+
+    activeImage.style.top =
+      imageTop + event.clientY - startY + "px";
   });
 
   document.addEventListener("mouseup", function () {
-    dragging = false;
-    if (activeImage) activeImage.style.cursor = "grab";
+    isDragging = false;
+
+    if (activeImage) {
+      activeImage.style.cursor = "grab";
+    }
   });
 
+  // Close the image when the Escape key is pressed
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") closeImage();
+    if (event.key === "Escape") {
+      closeImage();
+    }
   });
 
-  window.addEventListener("resize", function () {
-    if (activeImage) updateImage();
-  });
 })();
 </script>
 
