@@ -223,5 +223,54 @@ const products = [
     image: "images/65ball-brazilianhillflower.jpg",
     categories: ["ball", "floral ball art"]
   },
+  {
+    name: "Love Candle Holder",
+    code: "LoveCH001",
+    size: "105*85*25mm",
+    material: "Pink rose",
+    image: "images/candleholder-love-1.jpg",
+    categories: ["floral", "candle holder"]
+  },
+  {
+    name: "Love Candle Holder",
+    code: "Love CH002",
+    size: "105*85*25mm",
+    material: "Pink white rose, leaves and Blue flower",
+    image: "images/candleholder-love-2.jpg",
+    categories: ["floral", "candle holder"]
+  },
+  {
+    name: "Moon Candle Holder",
+    code: "MoonCH001",
+    size: "90*75*305mm",
+    material: "Blue flower and Leaves",
+    image: "images/candleholder-moon-1.jpg",
+    categories: ["floral", "candle holder"]
+  },
+  {
+    name: "Moon Candle Holder",
+    code: "MoonCH002",
+    size: "90*75*305mm",
+    material: "Pink Carnation and Leaves",
+    image: "images/candleholder-moon-2.jpg",
+    categories: ["floral", "candle holder"]
+  },
+  {
+    name: "Star Candle Holder",
+    code: "StarCH001",
+    size: "100*100*30mm",
+    material: "Pink Carnation and Leaves",
+    image: "images/candleholder-star-1.jpg",
+    categories: ["floral", "candle holder"]
+  },
+   {
+    name: "Star Candle Holder",
+    code: "StarCH002",
+    size: "100*100*30mm",
+    material: "Pink Carnation and Leaves",
+    image: "images/candleholder-star-1.jpg",
+    categories: ["floral", "candle holder"]
+  },
+
   
 ];
