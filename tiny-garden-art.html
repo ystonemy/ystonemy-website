@@ -278,8 +278,152 @@ if (filteredProducts.length === 0) {
 <!-- Image zoom functionality -->
 <script>
 (function () {
-  // Keep all your existing image zoom JavaScript code here.
-  // Do not leave these comments as a replacement for the actual code.
+  let activeImage = null;
+  let overlay = null;
+  let scale = 1;
+  let offsetX = 0;
+  let offsetY = 0;
+  let dragging = false;
+  let startX = 0;
+  let startY = 0;
+  let startOffsetX = 0;
+  let startOffsetY = 0;
+
+  function updateImage() {
+    if (!activeImage) return;
+
+    const width = activeImage.naturalWidth * scale;
+    const height = activeImage.naturalHeight * scale;
+
+    activeImage.style.width = width + "px";
+    activeImage.style.height = height + "px";
+    activeImage.style.left =
+      (window.innerWidth - width) / 2 + offsetX + "px";
+    activeImage.style.top =
+      (window.innerHeight - height) / 2 + offsetY + "px";
+  }
+
+  function closeImage() {
+    if (!activeImage) return;
+
+    activeImage.classList.remove("enlarged");
+    activeImage.removeAttribute("style");
+
+    if (overlay) overlay.remove();
+
+    activeImage = null;
+    overlay = null;
+    scale = 1;
+    offsetX = 0;
+    offsetY = 0;
+    dragging = false;
+  }
+
+  function openImage(img) {
+    if (activeImage) closeImage();
+
+    activeImage = img;
+    scale = 1;
+    offsetX = 0;
+    offsetY = 0;
+
+    overlay = document.createElement("div");
+    overlay.className = "image-zoom-overlay";
+    document.body.appendChild(overlay);
+    overlay.addEventListener("click", closeImage);
+
+    activeImage.classList.add("enlarged");
+    activeImage.style.objectFit = "contain";
+    activeImage.style.maxWidth = "none";
+    activeImage.style.maxHeight = "none";
+
+    updateImage();
+  }
+
+  document.addEventListener("click", function (event) {
+    const img = event.target.closest(".gallery .card img");
+
+    if (img && !activeImage) {
+      if (img.naturalWidth) {
+        openImage(img);
+      } else {
+        img.addEventListener("load", function onLoad() {
+          img.removeEventListener("load", onLoad);
+          openImage(img);
+        });
+      }
+    }
+  });
+
+  document.addEventListener("wheel", function (event) {
+    if (!activeImage) return;
+
+    event.preventDefault();
+
+    const oldScale = scale;
+    const rect = activeImage.getBoundingClientRect();
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+    const factor = event.deltaY < 0 ? 1.15 : 1 / 1.15;
+
+    const newScale = Math.min(5, Math.max(1, scale * factor));
+
+    if (newScale === scale) return;
+
+    const imagePointX = (mouseX - rect.left) / oldScale;
+    const imagePointY = (mouseY - rect.top) / oldScale;
+
+    scale = newScale;
+
+    offsetX = mouseX -
+      (window.innerWidth - activeImage.naturalWidth * scale) / 2 -
+      imagePointX * scale;
+
+    offsetY = mouseY -
+      (window.innerHeight - activeImage.naturalHeight * scale) / 2 -
+      imagePointY * scale;
+
+    if (scale === 1) {
+      offsetX = 0;
+      offsetY = 0;
+    }
+
+    updateImage();
+  }, { passive: false });
+
+  document.addEventListener("mousedown", function (event) {
+    if (!activeImage || event.target !== activeImage) return;
+
+    dragging = true;
+    startX = event.clientX;
+    startY = event.clientY;
+    startOffsetX = offsetX;
+    startOffsetY = offsetY;
+    activeImage.style.cursor = "grabbing";
+
+    event.preventDefault();
+  });
+
+  document.addEventListener("mousemove", function (event) {
+    if (!dragging || !activeImage) return;
+
+    offsetX = startOffsetX + event.clientX - startX;
+    offsetY = startOffsetY + event.clientY - startY;
+    updateImage();
+  });
+
+  document.addEventListener("mouseup", function () {
+    dragging = false;
+    if (activeImage) activeImage.style.cursor = "grab";
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeImage();
+  });
+
+  window.addEventListener("resize", function () {
+    if (activeImage) updateImage();
+  });
 })();
 </script>
 
