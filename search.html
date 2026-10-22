@@ -1,1 +1,308 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Products | YstoneMy</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #333;
+      background: #faf9f6;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #fff;
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #222;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #888;
+    }
+
+    .site-search {
+      display: flex;
+      gap: 6px;
+    }
+
+    .site-search input {
+      width: 180px;
+      min-width: 0;
+      padding: 9px 12px;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+
+    .site-search button {
+      padding: 9px 12px;
+      border: none;
+      background: #222;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 55px 5%;
+      min-height: 65vh;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    #search-summary {
+      color: #777;
+      margin-bottom: 30px;
+      overflow-wrap: anywhere;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: contain;
+      display: block;
+      background: #fff;
+    }
+
+    .card-content {
+      padding: 18px;
+      overflow-wrap: anywhere;
+    }
+
+    .card-content h2 {
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .card-content p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .no-results {
+      padding: 25px 0;
+      color: #666;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 16px 4%;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .site-search {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .site-search input {
+        width: min(260px, 75%);
+      }
+
+      main {
+        padding: 35px 5%;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .card img {
+        height: auto;
+        aspect-ratio: 1 / 1;
+      }
+
+      .card-content {
+        padding: 12px;
+      }
+
+      .card-content h2 {
+        font-size: 16px;
+      }
+
+      .card-content p {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="index.html">YstoneMy</a>
+
+    <nav>
+      <a href="index.html#home">Home</a>
+      <a href="index.html#collections">Collections</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#custom">Custom</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <form class="site-search" action="search.html" method="get">
+      <input
+        type="search"
+        name="q"
+        id="search-input"
+        placeholder="Search products..."
+        aria-label="Search products"
+        required
+      >
+      <button type="submit">Search</button>
+    </form>
+  </header>
+
+  <main>
+    <h1>Search Products</h1>
+    <p id="search-summary">Loading products...</p>
+    <div class="gallery" id="search-results"></div>
+  </main>
+
+  <footer>
+    © 2026 YstoneMy. All Rights Reserved.
+  </footer>
+
+  <script src="products.js"></script>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const query = (params.get("q") || "").trim().toLowerCase();
+
+    const input = document.getElementById("search-input");
+    const summary = document.getElementById("search-summary");
+    const results = document.getElementById("search-results");
+
+    input.value = params.get("q") || "";
+
+    if (!query) {
+      summary.textContent =
+        "Enter a product name, code, material or category to search.";
+      results.innerHTML = "";
+    } else {
+      const matchedProducts = products.filter(product => {
+        const searchableText = [
+          product.name,
+          product.code,
+          product.size || product.Size || "",
+          product.material || "",
+          ...(Array.isArray(product.categories)
+            ? product.categories
+            : [])
+        ].join(" ").toLowerCase();
+
+        return searchableText.includes(query);
+      });
+
+      summary.textContent =
+        matchedProducts.length +
+        (matchedProducts.length === 1
+          ? " product found for "
+          : " products found for ") +
+        '"' + params.get("q") + '"';
+
+      if (matchedProducts.length === 0) {
+        results.innerHTML =
+          '<p class="no-results">No products found. Please try another keyword.</p>';
+      } else {
+        results.innerHTML = matchedProducts.map(product => `
+          <article class="card">
+            <img
+              src="${product.image}"
+              alt="${product.name}"
+              loading="lazy"
+            >
+            <div class="card-content">
+              <h2>${product.name}</h2>
+              <p>Code: ${product.code}</p>
+              ${(product.size || product.Size)
+                ? `<p>Size: ${product.size || product.Size}</p>`
+                : ""}
+              ${product.material
+                ? `<p>Material: ${product.material}</p>`
+                : ""}
+              ${Array.isArray(product.categories)
+                ? `<p>Collection: ${product.categories.join(", ")}</p>`
+                : ""}
+            </div>
+          </article>
+        `).join("");
+      }
+    }
+  </script>
+
+</body>
+</html>
+
