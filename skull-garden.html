@@ -36,6 +36,15 @@
   transition: none !important;
   cursor: grab;
 }
+    
+/* Background behind the enlarged image */
+.image-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1999;
+  cursor: zoom-out;
+}
 
 
     /* ---------- Header（与首页一致） ---------- */
@@ -68,6 +77,40 @@
     nav a:hover {
       color: #888;
     }
+
+    /* Search bar */
+.site-search {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.site-search input {
+  width: 180px;
+  padding: 9px 12px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.site-search button {
+  padding: 9px 12px;
+  border: none;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.site-search button:hover {
+  background: #555;
+}
+
+@media (max-width: 768px) {
+  .site-search input {
+    width: 200px;
+  }
+}
 
     /* ---------- Button ---------- */
     .button {
@@ -192,17 +235,28 @@
 <body>
 
   <!-- Header（与首页一致，链接指向首页锚点） -->
-  <header>
-    <div class="logo">YstoneMy</div>
+ <header>
+  <div class="logo">YstoneMy</div>
 
-    <nav>
-      <a href="https://ystonemy.github.io/ystonemy-website/">Home</a>
-      <a href="index.html#collections">Collections</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#custom">Custom</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#collections">Collections</a>
+    <a href="#about">About</a>
+    <a href="#custom">Custom</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <form class="site-search" action="search.html" method="get">
+    <input
+      type="search"
+      name="q"
+      placeholder="Search products..."
+      aria-label="Search products"
+      required
+    >
+    <button type="submit">Search</button>
+  </form>
+</header>
 
 
   <!-- Page Hero -->
@@ -214,79 +268,8 @@
 
 
   <!-- Gallery -->
-  <section class="gallery-section">
-    <div class="gallery">
-
-      <div class="card">
-        <img src="images/g26a-skull-001-picture.jpg">
-        <div class="card-content">
-          <h3>Skull Floral</h3>
-          <p>Code: G26A001.</p>
-          <p>Size: 70x50mm.</p>
-          <p>Material: Floral</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="images/g26a-skull-002 picture.jpg">
-        <div class="card-content">
-          <h3>Skull Floral</h3>
-          <p>Code: G26A002.</p>
-          <p>Size: 70x50mm.</p>
-          <p>Material: Floral.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="images/g26a-skull-003-picture.jpg">
-        <div class="card-content">
-          <h3>Skull Floral</h3>
-          <p>Code: G26A003.</p>
-          <p>Size: 70x50mm.</p>
-          <p>Material: Floral.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="images/g26a-skull-004-picture.jpg">
-        <div class="card-content">
-          <h3>Skull Floral</h3>
-          <p>Code: G26A004.</p>
-          <p>Size: 70x50mm.</p>
-          <p>Material: Floral.</p>
-        </div>
-      </div>
-
-      <div class="card">
-       <img src="images/g26a-skull-005.jpg">
-      <div class="card-content">
-        <h3>Skull Floral</h3>
-        <p>Code: G26A005.</p>
-        <p>Size: 75x105mm.</p>
-        <p>Material: Floral.</p>
-      </div>
-    </div>
-
-      <div class="card">
-        <img src="images/g26a-skull-006.jpg">
-        <div class="card-content">
-          <h3>Skull Floral</h3>
-          <p>Code: G26A006.</p>
-          <p>Size: 75x105mm.</p>
-          <p>Material: Floral.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="images/g26a-skull-007.jpg">
-        <div class="card-content">
-          <h3>Skull Floral</h3>
-          <p>Code: G26A007.</p>
-          <p>Size: 75x105mm.</p>
-          <p>Material: Floral.</p>
-        </div>
-      </div>
-      
+      <section class="gallery-section">
+      <div class="gallery" id="product-container">
     </div>
   </section>
 
@@ -302,6 +285,40 @@
   <footer>
     © 2026 YstoneMy. All Rights Reserved.
   </footer>
+
+
+<!-- Load the product database -->
+<script src="products.js"></script>
+
+<!-- Generate product cards -->
+<script>
+const category = "Skull";
+
+const container = document.getElementById("product-container");
+
+
+const filteredProducts = products.filter(product =>
+  Array.isArray(product.categories) &&
+  product.categories.includes(category)
+);
+
+if (filteredProducts.length === 0) {
+  container.innerHTML = "<p>No products found in this category.</p>";
+} else {
+  container.innerHTML = filteredProducts.map(product => `
+    <div class="card">
+      <img src="${product.image}" alt="${product.name}">
+      <div class="card-content">
+        <h3>${product.name}</h3>
+        <p>Code: ${product.code}</p>
+        ${product.size ? `<p>Size: ${product.size}</p>` : ""}
+        ${product.material ? `<p>Material: ${product.material}</p>` : ""}
+      </div>
+    </div>
+  `).join("");
+}
+</script>
+
 
 <script>
 (function () {
@@ -362,7 +379,7 @@
 
   
 document.addEventListener("click", function (event) {
-  const img = event.target.closest(".gallery .card img");
+  const img = event.target.closest(".product-container .card img");
 
   if (img) {
     event.preventDefault();
@@ -461,3 +478,4 @@ document.addEventListener("click", function (event) {
 
 </body>
 </html>
+
