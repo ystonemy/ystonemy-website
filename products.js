@@ -67,7 +67,7 @@ const products = [
     code: "SK50-002",
     size: "70x50mm",
     material: "Floral",
-    image: "images/g26a-skull-002-picture.jpg",
+    image: "images/g26a-skull-002 picture.jpg",
     categories: ["Skull", "Botanical","Floral"]
   },
   {
@@ -91,7 +91,7 @@ const products = [
     code: "SK105-001",
     size: "75x105mm",
     material: "Floral",
-    image: "images/g26a-skull-005-picture.jpg",
+    image: "images/g26a-skull-005.jpg",
     categories: ["Skull", "Botanical","Floral"]
   },
   {
@@ -99,7 +99,7 @@ const products = [
     code: "SK105-002",
    size: "75x105mm",
     material: "Floral",
-    image: "images/g26a-skull-006-picture.jpg",
+    image: "images/g26a-skull-006.jpg",
     categories: ["Skull", "Botanical","Floral"]
   },
    {
@@ -107,7 +107,7 @@ const products = [
     code: "SK105-003",
     size: "75x105mm",
     material: "Floral",
-    image: "images/g26a-skull-007-picture.jpg",
+    image: "images/g26a-skull-007.jpg",
     categories: ["Skull", "Botanical","Floral"]
   },
   {
