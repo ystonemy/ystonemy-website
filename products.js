@@ -235,7 +235,7 @@ const products = [
     name: "Love Candle Holder",
     code: "Love CH002",
     size: "105*85*25mm",
-    material: "Pink white rose, leaves and Blue flower",
+    material: "Pink white rose, leaves & Blue flower",
     image: "images/candleholder-love-2.jpg",
     categories: ["floral", "candle holder"]
   },
@@ -243,7 +243,7 @@ const products = [
     name: "Moon Candle Holder",
     code: "MoonCH001",
     size: "90*75*305mm",
-    material: "Blue flower and Leaves",
+    material: "Blue flower & Leaves",
     image: "images/candleholder-moon-1.jpg",
     categories: ["floral", "candle holder"]
   },
@@ -251,7 +251,7 @@ const products = [
     name: "Moon Candle Holder",
     code: "MoonCH002",
     size: "90*75*305mm",
-    material: "Pink Carnation and Leaves",
+    material: "Pink Carnation & Leaves",
     image: "images/candleholder-moon-2.jpg",
     categories: ["floral", "candle holder"]
   },
@@ -259,7 +259,7 @@ const products = [
     name: "Star Candle Holder",
     code: "StarCH001",
     size: "100*100*30mm",
-    material: "Pink Carnation and Leaves",
+    material: "Pink Carnation & Leaves",
     image: "images/candleholder-star-1.jpg",
     categories: ["floral", "candle holder"]
   },
@@ -267,10 +267,19 @@ const products = [
     name: "Star Candle Holder",
     code: "StarCH002",
     size: "100*100*30mm",
-    material: "Pink Carnation and Leaves",
-    image: "images/candleholder-star-1.jpg",
+    material: "Yellow rose & blue flower",
+    image: "images/candleholder-star-2.jpg",
     categories: ["floral", "candle holder"]
   },
+  {
+    name: "Star Candle Holder",
+    code: "StarCH003",
+    size: "100*100*30mm",
+    material: "Green Hydrangea & Purple Chrysanthemum",
+    image: "images/candleholder-star-3.jpg",
+    categories: ["floral", "candle holder"]
+  },
+
 
   
 ];
