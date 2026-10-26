@@ -32,6 +32,21 @@ const products = [
     categories: ["ball","Ocean Park"]
   },
   {
+  name: "80 Ball Yellow Gerbera Daisy ",
+    code: "80MF004",
+    size: "80mm diameter",
+    material: "Dry Moss & flower",
+    image: "images/80ball-yellowChrysanthemumgarden.jpg",
+    categories: ["ball","Moss",  "Botanical"]
+  },
+  {
+    name: "80 Ball Yellow & White Daisy",
+    code: "80MF005",
+    size: "80mm diameter",
+    image: "images/80ball-daistmumgarden.jpg",
+    categories: ["ball", "Botanical", "moss"]
+  },
+  {
     name: "80 Ball Moss Forest A",
     code: "80MF001",
     size: "80mm diameter",
@@ -279,7 +294,21 @@ const products = [
     image: "images/candleholder-star-3.jpg",
     categories: ["floral", "candle holder"]
   },
-
-
+  {
+    name: "Candle Holder with Wood",
+    code: "CHWood001",
+    size: "180*95*20mm",
+    material: "Purple Chrysanthemum & Globe Amaranth",
+    image: "images/candleholder-purflower.jpg",
+    categories: ["floral", "candle holder"]
+  },
+  {
+    name: "Candle Holder with Wood",
+    code: "CHWood002",
+    size: "180*95*20mm",
+    material: "Green Hydrangea",
+    image: "images/candleholder-blueflower.jpg",
+    categories: ["floral", "candle holder"]
+  },
   
 ];
