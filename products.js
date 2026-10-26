@@ -36,7 +36,7 @@ const products = [
     code: "80MF001",
     size: "80mm diameter",
     image: "images/80ball-moss-a.jpg",
-    categories: ["ball", "Tiny Garden"]
+    categories: ["ball", "Tiny Garden", "moss"]
   },
 
   {
@@ -45,7 +45,7 @@ const products = [
     size: "80mm diameter",
     material: "Dry moss & leaves",
     image: "images/80ball-moss-b.jpg",
-    categories: ["ball", "Tiny Garden",]
+    categories: ["ball", "Tiny Garden", "moss"]
   },
   {
     name: "80 Ball Moss Forest C",
@@ -53,7 +53,7 @@ const products = [
     size: "80mm diameter",
     material: "Dry moss & leaves",
     image: "images/80ball-moss-c.jpg",
-    categories: ["ball", "Tiny Garden",]
+    categories: ["ball", "Tiny Garden", "moss"]
   },
 {
   name: "Tiny Garden",
@@ -61,7 +61,7 @@ const products = [
   size: "80mm diameter",
   material: "Dry moss & leaves",
   image: "images/80-tinygarden.jpg",
-  categories: ["Tiny Garden", "Botanical", "ball"]
+  categories: ["Tiny Garden", "Botanical", "ball", "moss"]
 },
 {
   name: "Daisy Garden",
@@ -69,7 +69,7 @@ const products = [
   size: "80mm diameter",
   material: "Daisy & dry moss",
   image: "images/80-daisygarden.JPG",
-  categories: ["Tiny Garden", "Botanical","ball"]
+  categories: ["Tiny Garden", "Botanical", "ball", "moss"]
 },
 {
   name: "Tiny Garden Collection 1",
@@ -77,7 +77,7 @@ const products = [
   size: "50 × 50 × 50 mm",
   material: "Dry moss, flowers, seashell, leaves & stone",
   image: "images/50YJ2.jpg",
-  categories: ["Tiny Garden", "Botanical"]
+  categories: ["Tiny Garden", "Botanical", "moss"]
 },
   {
     name: "50 Skull Floral ",
