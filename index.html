@@ -83,34 +83,35 @@
   }
 }
 
-    .hero {
-      min-height: 75vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 20px;
-      background:
-        linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72)),
-        url("https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1800&q=80")
-        center/cover;
-    }
+   .hero {
+  min-height: 600px;
+  background-image: url("images/hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-    .hero-content {
-      max-width: 800px;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
-    .hero h1 {
-      font-size: 58px;
-      letter-spacing: 6px;
-      margin-bottom: 20px;
-    }
+  position: relative;
+  color: white;
+}
 
-    .hero p {
-      font-size: 20px;
-      color: #555;
-      margin-bottom: 30px;
-    }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 30px 20px;
+}
+
 
     .button {
       display: inline-block;
@@ -381,21 +382,19 @@
 
 
   <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="hero-content">
+<section class="hero" id="home">
+  <div class="hero-content">
 
-      <h1>YstoneMy</h1>
+    <h1>YstoneMy</h1>
 
-      <p>
-        Resin Art & Nature-Inspired Crafts
-      </p>
+    <p>Resin Art & Nature-Inspired Crafts</p>
 
-      <a href="#collections" class="button">
-        Explore Collection
-      </a>
+    <a href="#collections" class="button">
+      Explore Collection
+    </a>
 
-    </div>
-  </section>
+  </div>
+</section>
 
 
   <!-- Collections -->
