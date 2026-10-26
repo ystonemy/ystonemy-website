@@ -292,13 +292,14 @@
 
 <!-- Generate product cards -->
 <script>
-const categories = "ball";
+const category = "ball";
 
 const container = document.getElementById("product-container");
 
 
-const filteredProducts = products.filter(
-  product => categories.includes(product.category)
+const filteredProducts = products.filter(product =>
+  Array.isArray(product.categories) &&
+  product.categories.includes(category)
 );
 
 if (filteredProducts.length === 0) {
