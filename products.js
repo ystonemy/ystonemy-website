@@ -61,7 +61,7 @@ const products = [
   size: "80mm diameter",
   material: "Dry moss & leaves",
   image: "images/80-tinygarden.jpg",
-  categories: ["Tiny Garden", "Botanical"]
+  categories: ["Tiny Garden", "Botanical", "ball"]
 },
 {
   name: "Daisy Garden",
@@ -69,7 +69,7 @@ const products = [
   size: "80mm diameter",
   material: "Daisy & dry moss",
   image: "images/80-daisygarden.JPG",
-  categories: ["Tiny Garden", "Botanical"]
+  categories: ["Tiny Garden", "Botanical","ball"]
 },
 {
   name: "Tiny Garden Collection 1",
