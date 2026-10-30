@@ -143,6 +143,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
+      align-items: stretch;
     }
 
     .collections .card-link {
@@ -154,6 +155,9 @@
       background: white;
       overflow: hidden;
       box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .card img {
@@ -165,6 +169,7 @@
 
     .card-content {
       padding: 25px;
+      flex: 1;
     }
 
     .card-content h3 {
@@ -434,7 +439,6 @@
 
       <p>
         The Eternal Dance of Life and Death.
-        
       </p>
     </div>
   </div>
@@ -450,7 +454,6 @@
 
       <p>
         Where candlelight meets art.
-        
       </p>
     </div>
   </div>
@@ -478,7 +481,6 @@
 
     <div class="card-content">
       <h3>Resin Coaster</h3>
-
       <p>
         Where art meets everyday moments.
         
