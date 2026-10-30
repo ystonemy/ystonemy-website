@@ -310,5 +310,84 @@ const products = [
     image: "images/candleholder-blueflower.jpg",
     categories: ["floral", "candle holder"]
   },
-  
+  {
+    name: "Bottle Stopper Orange Rose",
+    code: "BSG-0rgrose",
+    size: "112mm length",
+    material: "Orange rose & metal part",
+    image: "images/bottlestopper-orrangerose1.jpg",
+    categories: ["floral", "Bottle Stopper"]
+  },
+  {
+    name: "Bottle Stopper Yellow Rose",
+    code: "BSG-Ylwrose",
+    size: "112mm length",
+    material: "Yellow rose & metal part ",
+    image: "images/bottlestopper-yellowrose1.jpg",
+    categories: ["floral", "Bottle Stopper"]
+  },
+  {
+    name: "Bottle Stopper Pink Rose",
+    code: "BSS-Pkrose",
+    size: "112mm length",
+    material: "Pink rose & metal part ",
+    image: "images/bottlestopper-pink rose.jpg",
+    categories: ["floral", "Bottle Stopper"]
+  },
+  {
+    name: "Bottle Stopper Multi Flowers",
+    code: "BSS-Mulflowers",
+    size: "112mm length",
+    material: "Multi Flowers & metal part ",
+    image: "images/bottlestopper-multiflowers.jpg",
+    categories: ["floral", "Bottle Stopper"]
+  },
+  {
+    name: "Bottle Stopper Pink Rose & Blue Hydrangea ",
+    code: "BSS-Pkrosehyd",
+    size: "112mm length",
+    material: "Pink rose, Blue Hydrangea & metal part ",
+    image: "images/bottlestopper-pinkpurple.jpg",
+    categories: ["floral", "Bottle Stopper"]
+  },
+  {
+    name: "Bottle Stopper White Hydrangea & Blue Flower ",
+    code: "BSS-Whthydstar",
+    size: "112mm length",
+    material: "White Hydrangea, Blue Flower & metal part ",
+    image: "images/bottlestopper-whitepurple.jpg",
+    categories: ["floral", "Bottle Stopper"]
+  },
+  {
+    name: "Bottle Stopper with Berry Flowers ",
+    code: "BSS-Mulberry",
+    size: "112mm length",
+    material: "Multiple Color Berry Flowers & metal part ",
+    image: "images/bottlestopper-berryflowers.jpg",
+    categories: ["floral", "Bottle Stopper"]
+  },
+  {
+    name: "Bottle Stopper Light Blue Hydrangea ",
+    code: "BSS-Ltbluhyd",
+    size: "112mm length",
+    material: "Light Blue Hydrangea & metal part ",
+    image: "images/bottlestopper-bluewhite.jpg",
+    categories: ["floral", "Bottle Stopper"]
+  },
+  {
+    name: "Bottle Stopper Orange Rose ",
+    code: "BSS-Orgrose",
+    size: "112mm length",
+    material: "Orange Rose & metal part ",
+    image: "images/bottlestopper-orangerose.jpg",
+    categories: ["floral", "Bottle Stopper"]
+  },
+   {
+    name: "Bottle Stopper Yellow Rose ",
+    code: "BSS-Ylwrose",
+    size: "112mm length",
+    material: "Yellow Rose & metal part ",
+    image: "images/bottlestopper-yellowrose.jpg",
+    categories: ["floral", "Bottle Stopper"]
+  },
 ];
