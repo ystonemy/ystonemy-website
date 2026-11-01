@@ -37,7 +37,7 @@ const products = [
     size: "80mm diameter",
     material: "Dry Moss & flower",
     image: "images/80ball-yellowChrysanthemumgarden.jpg",
-    categories: ["ball","Moss",  "Botanical"]
+    categories: ["ball", "Moss",  "Botanical"]
   },
   {
     name: "80 Ball Yellow & White Daisy",
