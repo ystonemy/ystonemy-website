@@ -5,7 +5,7 @@ const products = [
     size: "65mm diameter",
     material: "Shell, Crystal stone",
     image: "images/65ball-shell-a.jpg",
-    categories: ["ball", "Ocean Park"]
+    categories: ["ball", "Ocean Park", "ocean ball"]
   },
   {
     name: "65 Ball Seastar A",
@@ -13,7 +13,7 @@ const products = [
     size: "65mm diameter",
     material: "Shell, Seastar",
     image: "images/65ball-shell-b.jpg",
-    categories: ["ball","Ocean Park"]
+    categories: ["ball","Ocean Park", "ocean ball"]
   },
   {
     name: "80 Ball Shell A",
@@ -21,7 +21,7 @@ const products = [
     size: "80mm diameter",
     material: "Shell, Crystal stone",
     image: "images/80ball-shell-a.jpg",
-    categories: ["ball","Ocean Park"]
+    categories: ["ball","Ocean Park", "ocean ball"]
   },
   {
     name: "80 Ball Seastar A",
@@ -29,7 +29,7 @@ const products = [
     size: "80mm diameter",
     material: "Shell, Seastar",
     image: "images/80ball-shell-b.jpg",
-    categories: ["ball","Ocean Park"]
+    categories: ["ball","Ocean Park", "ocean ball"]
   },
   {
   name: "80 Ball Yellow Gerbera Daisy ",
@@ -44,14 +44,14 @@ const products = [
     code: "80MF005",
     size: "80mm diameter",
     image: "images/80ball-daistmumgarden.jpg",
-    categories: ["ball", "Botanical", "moss"]
+    categories: ["ball", "Botanical", "moss", "moss ball"]
   },
   {
     name: "80 Ball Moss Forest A",
     code: "80MF001",
     size: "80mm diameter",
     image: "images/80ball-moss-a.jpg",
-    categories: ["ball", "Tiny Garden", "moss"]
+    categories: ["ball", "Tiny Garden", "moss", "moss ball"]
   },
 
   {
@@ -60,7 +60,7 @@ const products = [
     size: "80mm diameter",
     material: "Dry moss & leaves",
     image: "images/80ball-moss-b.jpg",
-    categories: ["ball", "Tiny Garden", "moss"]
+    categories: ["ball", "Tiny Garden", "moss", "moss ball"]
   },
   {
     name: "80 Ball Moss Forest C",
@@ -68,7 +68,7 @@ const products = [
     size: "80mm diameter",
     material: "Dry moss & leaves",
     image: "images/80ball-moss-c.jpg",
-    categories: ["ball", "Tiny Garden", "moss"]
+    categories: ["ball", "Tiny Garden", "moss", "moss ball"]
   },
 {
   name: "Tiny Garden",
@@ -76,7 +76,7 @@ const products = [
   size: "80mm diameter",
   material: "Dry moss & leaves",
   image: "images/80-tinygarden.jpg",
-  categories: ["Tiny Garden", "Botanical", "ball", "moss"]
+  categories: ["Tiny Garden", "Botanical", "ball", "moss", "moss ball"]
 },
 {
   name: "Daisy Garden",
@@ -84,7 +84,7 @@ const products = [
   size: "80mm diameter",
   material: "Daisy & dry moss",
   image: "images/80-daisygarden.JPG",
-  categories: ["Tiny Garden", "Botanical", "ball", "moss"]
+  categories: ["Tiny Garden", "Botanical", "ball", "moss", "moss ball"]
 },
 {
   name: "Tiny Garden Collection 1",
