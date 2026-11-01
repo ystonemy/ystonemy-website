@@ -219,7 +219,7 @@ const products = [
     code: "65ballddl",
     size: "65mm diameter",
     material: "Dandelion",
-    image: "images/65ball-dandelion.jpg",
+    image: "images/65ball-dandelion1.jpg",
     categories: ["ball", "floral ball"]
   },
    {
