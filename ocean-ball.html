@@ -174,10 +174,17 @@
       padding: 22px;
     }
 
-    .gallery .card-content h3 {
+    .gallery .card-content h2 {
       font-size: 15px;
       margin-bottom: 4px;
     }
+    
+    .gallery .card-content .product-description {
+  color: #777;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 10px;
+  }
 
     .gallery .card-content p {
       color: #666;
@@ -308,16 +315,34 @@ if (filteredProducts.length === 0) {
   container.innerHTML = "<p>No products found in this category.</p>";
 } else {
   container.innerHTML = filteredProducts.map(product => `
-    <div class="card">
-      <img src="${product.image}" alt="${product.name}">
-      <div class="card-content">
-        <h3>${product.name}</h3>
-        <p>Code: ${product.code}</p>
-        ${product.size ? `<p>Size: ${product.size}</p>` : ""}
-        ${product.material ? `<p>Material: ${product.material}</p>` : ""}
-      </div>
+  <div class="card">
+
+    <img
+      src="${product.image}"
+      alt="${product.alt || product.name}"
+      loading="lazy"
+      decoding="async"
+    >
+
+    <div class="card-content">
+
+      <h2>${product.name}</h2>
+
+      <p>Code: ${product.code}</p>
+
+      ${product.size ? `<p>Size: ${product.size}</p>` : ""}
+
+      ${product.material ? `<p>Material: ${product.material}</p>` : ""}
+
+      ${product.description ? `
+        <p class="product-description">
+          ${product.description}
+        </p>
+      ` : ""}
+
     </div>
-  `).join("");
+  </div>
+`).join("");
 }
 </script>
 
