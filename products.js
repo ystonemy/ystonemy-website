@@ -15,7 +15,7 @@ const products = [
     size: "65mm diameter",
     material: "Shell, Starfish",
     image: "images/65ball-shell-b.jpg",
-    alt: "65mm handmade clear resin sphere, Handmade ocean-inspired resin ball featuring seashells, starfish and golden sand",
+    alt: "65mm handmade ocean-inspired resin ball featuring seashells, starfish and golden sand",
     description: "A miniature ocean world preserved in a clear resin sphere, featuring delicate seashells, starfish and beautiful coastal details.",
     categories: ["ball","Ocean Park", "ocean ball"]
   },
@@ -25,8 +25,8 @@ const products = [
     size: "80mm diameter",
     material: "Shell, Crystal stone",
     image: "images/80ball-shell-a.jpg",
-    alt: "65mm Handmade ocean-inspired resin ball featuring seashells, starfish and golden sand",
-    description: A delicate ocean inspired composition where seashells and aquatic details create a miniature world of calm and natural beauty.",
+    alt: "80mm Handmade ocean-inspired resin ball featuring seashells, starfish and golden sand",
+    description: "A delicate ocean inspired composition where seashells and aquatic details create a miniature world of calm and natural beauty.",
     categories: ["ball","Ocean Park", "ocean ball"]
   },
   {
@@ -35,7 +35,7 @@ const products = [
     size: "80mm diameter",
     material: "Shell, Seastar",
     image: "images/80ball-shell-b.jpg",
-    alt: "65mm Miniature ocean world featuring seashells, starfish and sandy beach details inside resin.",
+    alt: "80mm Miniature ocean world featuring seashells, starfish and sandy beach details inside resin.",
     description: "Preserving the beauty of coastal elements in a transparent resin sphere, this piece brings a touch of ocean-inspired artistry into everyday spaces.",
     categories: ["ball","Ocean Park", "ocean ball"]
   },
