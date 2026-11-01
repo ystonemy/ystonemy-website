@@ -1,34 +1,42 @@
 const products = [
   {
-    name: "65 Ball Shell A",
+    name: "65 Ball Little Piece of the Ocean",
     code: "65BO0001",
     size: "65mm diameter",
     material: "Shell, Crystal stone",
     image: "images/65ball-shell-a.jpg",
+    alt: "65mm handmade Clear resin sphere with miniature seashells and turquoise ocean-inspired details.",
+    description: "Bring the beauty of the seaside into your space with this artistic resin sphere, capturing shells, sandy textures and ocean-inspired colours.",
     categories: ["ball", "Ocean Park", "ocean ball"]
   },
   {
-    name: "65 Ball Seastar A",
+    name: "65 Ball Ocean in a Sphere",
     code: "65BO0002",
     size: "65mm diameter",
-    material: "Shell, Seastar",
+    material: "Shell, Starfish",
     image: "images/65ball-shell-b.jpg",
+    alt: "65mm handmade clear resin sphere, Handmade ocean-inspired resin ball featuring seashells, starfish and golden sand",
+    description: "A miniature ocean world preserved in a clear resin sphere, featuring delicate seashells, starfish and beautiful coastal details.",
     categories: ["ball","Ocean Park", "ocean ball"]
   },
   {
-    name: "80 Ball Shell A",
+    name: "80 Ball Underwater Serenity",
     code: "80BO0001",
     size: "80mm diameter",
     material: "Shell, Crystal stone",
     image: "images/80ball-shell-a.jpg",
+    alt: "65mm Handmade ocean-inspired resin ball featuring seashells, starfish and golden sand",
+    description: A delicate ocean inspired composition where seashells and aquatic details create a miniature world of calm and natural beauty.",
     categories: ["ball","Ocean Park", "ocean ball"]
   },
   {
-    name: "80 Ball Seastar A",
+    name: "80 Ball Memories of the Sea",
     code: "80BO0002",
     size: "80mm diameter",
     material: "Shell, Seastar",
     image: "images/80ball-shell-b.jpg",
+    alt: "65mm Miniature ocean world featuring seashells, starfish and sandy beach details inside resin.",
+    description: "Preserving the beauty of coastal elements in a transparent resin sphere, this piece brings a touch of ocean-inspired artistry into everyday spaces.",
     categories: ["ball","Ocean Park", "ocean ball"]
   },
   {
