@@ -156,7 +156,7 @@ const products = [
     size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-org3.jpg",
-    categories: ["ball", "floral ball art"]
+    categories: ["ball", "floral ball"]
   },
   {
     name: "80 Fuchsia White",
@@ -164,7 +164,7 @@ const products = [
    size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-fus3.jpg",
-    categories: ["ball", "floral ball art"]
+    categories: ["ball", "floral ball"]
   },
    {
     name: "80 Tulip Pink White",
@@ -172,7 +172,7 @@ const products = [
     size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-whred4.jpg",
-    categories: ["ball", "floral ball art"]
+    categories: ["ball", "floral ball"]
   },
    {
     name: "80 Tulip Yellow",
@@ -180,7 +180,7 @@ const products = [
     size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-ylw2.jpg",
-    categories: ["ball", "floral ball art"]
+    categories: ["ball", "floral ball"]
   },
   {
     name: "80 Tulip Purple",
@@ -188,7 +188,7 @@ const products = [
     size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-pur4.jpg",
-    categories: ["ball", "floral ball art"]
+    categories: ["ball", "floral ball"]
   },
    {
     name: "80 Hydrangea Blue",
@@ -196,7 +196,7 @@ const products = [
     size: "80mm diameter",
     material: "Hydrangea",
     image: "images/80ball-bluehydrangea.jpg",
-    categories: ["ball", "floral ball art"]
+    categories: ["ball", "floral ball"]
   },
    {
     name: "80 Lace Flower",
@@ -204,7 +204,7 @@ const products = [
     size: "80mm diameter",
     material: "Lace Flower",
     image: "images/80ball-lace.jpg",
-    categories: ["ball", "floral ball art"]
+    categories: ["ball", "floral ball"]
   },
    {
     name: "65 Dandelion",
@@ -212,7 +212,7 @@ const products = [
     size: "65mm diameter",
     material: "Dandelion",
     image: "images/65ball-dandelion.jpg",
-    categories: ["ball", "floral ball art"]
+    categories: ["ball", "floral ball"]
   },
    {
     name: "65 Orchid",
@@ -220,7 +220,7 @@ const products = [
     size: "65mm diameter",
     material: "Orchid",
     image: "images/65ball-orchid.jpg",
-    categories: ["ball", "floral ball art"]
+    categories: ["ball", "floral ball"]
   },
   {
     name: "65 Hydrangea Pink",
@@ -228,7 +228,7 @@ const products = [
     size: "65mm diameter",
     material: "Hydrangea",
     image: "images/65ball-pinkhydrangea.jpg",
-    categories: ["ball", "floral ball art"]
+    categories: ["ball", "floral ball"]
   },
   {
     name: "65 Brazilian Star Flower",
@@ -236,7 +236,7 @@ const products = [
     size: "65mm diameter",
     material: "Brazilian Star Flowers",
     image: "images/65ball-brazilianhillflower.jpg",
-    categories: ["ball", "floral ball art"]
+    categories: ["ball", "floral ball"]
   },
   {
     name: "Love Candle Holder",
