@@ -214,7 +214,9 @@ const products = [
     size: "80mm diameter",
     material: "Hydrangea",
     image: "images/80ball-bluehydrangea.jpg",
-    categories: ["ball", "floral ball"]
+    alt: "Handmade clear resin sphere encapsulating a single blue hydrange flower.",
+    description: "A delicate blue Hydrangea flower preserved in crystal-clear resin, showcasing its charming petals and vibrant natural beauty.",
+    categories: ["ball", "floral ball", "hydrangea"]
   },
    {
     name: "80 Lace Flower",
@@ -224,7 +226,7 @@ const products = [
     image: "images/80ball-lace.jpg",
     alt: "Handmade transparent resin ball preserving a delicate lace flower.",
     description: "A beautiful lace flower encapsulated in clear resin, showcasing its intricate petals and natural elegance.",
-    categories: ["ball", "floral ball", "tulip"]
+    categories: ["ball", "floral ball", "lace flower"]
   },
    {
     name: "65 Dandelion",
@@ -234,7 +236,7 @@ const products = [
     image: "images/65ball-dandelion1.jpg",
     alt: "Handmade clear resin sphere encapsulating a delicate white dandelion flower.",
     description: "A delicate dandelion preserved in crystal-clear resin, capturing its delicate seeds in a timeless botanical keepsake.",
-    categories: ["ball", "floral ball", "tulip"]
+    categories: ["ball", "floral ball", "dandelion"]
   },
    {
     name: "65 Orchid",
@@ -244,7 +246,7 @@ const products = [
     image: "images/65ball-orchid.jpg",
     alt: "Handmade transparent resin sphere featuring a single orchid flower.",
     description: "An elegant orchid encapsulated in clear resin, preserving its graceful petals and exotic beauty.",
-    categories: ["ball", "floral ball", "tulip"]
+    categories: ["ball", "floral ball", "orchid"]
   },
   {
     name: "65 Hydrangea Pink",
@@ -252,7 +254,9 @@ const products = [
     size: "65mm diameter",
     material: "Hydrangea",
     image: "images/65ball-pinkhydrangea.jpg",
-    categories: ["ball", "floral ball"]
+    alt: "Transparent resin sphere preserving a single pink hydrangea flower.",
+    description: "A lovely pink Hydrangea flower encased in clear resin, capturing its soft colors and delicate floral charm.",
+    categories: ["ball", "floral ball", "hydrangea"]
   },
   {
     name: "65 Brazilian Star Flower",
@@ -260,7 +264,9 @@ const products = [
     size: "65mm diameter",
     material: "Brazilian Star Flowers",
     image: "images/65ball-brazilianhillflower.jpg",
-    categories: ["ball", "floral ball"]
+    alt: "Handmade clear resin ball featuring colorful Brazilian star flowers in multiple shades.",
+    description: "Colorful Brazilian star flowers preserved in crystal-clear resin, creating a vibrant botanical composition full of natural charm.",
+    categories: ["ball", "floral ball", "star flower"]
   },
   {
     name: "Love Candle Holder",
