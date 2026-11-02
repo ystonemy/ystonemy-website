@@ -164,7 +164,9 @@ const products = [
     size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-org3.jpg",
-    categories: ["ball", "floral ball"]
+    alt: "Handmade clear resin ball with a single orange tulip flower.",
+    description: "A cheerful orange tulip preserved in resin, adding a warm and vibrant botanical touch.",
+    categories: ["ball", "floral ball", "tulip"]
   },
   {
     name: "80 Fuchsia White",
@@ -172,7 +174,9 @@ const products = [
    size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-fus3.jpg",
-    categories: ["ball", "floral ball"]
+    alt: "Transparent resin sphere featuring a single red and white tulip..",
+    description: "A striking red and white tulip captured in clear resin, showcasing its unique natural beauty.",
+    categories: ["ball", "floral ball", "tulip"]
   },
    {
     name: "80 Tulip Pink White",
