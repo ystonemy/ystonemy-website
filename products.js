@@ -174,7 +174,7 @@ const products = [
    size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-fus3.jpg",
-    alt: "Transparent resin sphere featuring a single red and white tulip..",
+    alt: "Transparent resin sphere featuring a single red and white tulip.",
     description: "A striking red and white tulip captured in clear resin, showcasing its unique natural beauty.",
     categories: ["ball", "floral ball", "tulip"]
   },
@@ -184,7 +184,9 @@ const products = [
     size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-whred4.jpg",
-    categories: ["ball", "floral ball"]
+    alt: "Clear resin ball encapsulating a single pink tulip flower.",
+    description: "A graceful pink tulip preserved in resin, symbolizing beauty, elegance, and timeless charm.",
+    categories: ["ball", "floral ball", "tulip"]
   },
    {
     name: "80 Tulip Yellow",
@@ -192,7 +194,9 @@ const products = [
     size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-ylw2.jpg",
-    categories: ["ball", "floral ball"]
+    alt: "Handmade transparent resin sphere with a single yellow tulip.",
+    description: "A vibrant yellow tulip encased in clear resin, bringing warmth and sunshine to your space.",
+    categories: ["ball", "floral ball", "tulip"]
   },
   {
     name: "80 Tulip Purple",
@@ -200,7 +204,9 @@ const products = [
     size: "80mm diameter",
     material: "Tulip",
     image: "images/80tulip-pur4.jpg",
-    categories: ["ball", "floral ball"]
+    alt: "Clear resin sphere featuring a single purple tulip flower.",
+    description: "A blue tulip preserved in crystal-clear resin, celebrating the beauty of floral art.",
+    categories: ["ball", "floral ball", "tulip"]
   },
    {
     name: "80 Hydrangea Blue",
@@ -216,7 +222,9 @@ const products = [
     size: "80mm diameter",
     material: "Lace Flower",
     image: "images/80ball-lace.jpg",
-    categories: ["ball", "floral ball"]
+    alt: "Handmade transparent resin ball preserving a delicate lace flower.",
+    description: "A beautiful lace flower encapsulated in clear resin, showcasing its intricate petals and natural elegance.",
+    categories: ["ball", "floral ball", "tulip"]
   },
    {
     name: "65 Dandelion",
@@ -224,7 +232,9 @@ const products = [
     size: "65mm diameter",
     material: "Dandelion",
     image: "images/65ball-dandelion1.jpg",
-    categories: ["ball", "floral ball"]
+    alt: "Handmade clear resin sphere encapsulating a delicate white dandelion flower.",
+    description: "A delicate dandelion preserved in crystal-clear resin, capturing its delicate seeds in a timeless botanical keepsake.",
+    categories: ["ball", "floral ball", "tulip"]
   },
    {
     name: "65 Orchid",
@@ -232,7 +242,9 @@ const products = [
     size: "65mm diameter",
     material: "Orchid",
     image: "images/65ball-orchid.jpg",
-    categories: ["ball", "floral ball"]
+    alt: "Handmade transparent resin sphere featuring a single orchid flower.",
+    description: "An elegant orchid encapsulated in clear resin, preserving its graceful petals and exotic beauty.",
+    categories: ["ball", "floral ball", "tulip"]
   },
   {
     name: "65 Hydrangea Pink",
