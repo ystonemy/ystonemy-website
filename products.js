@@ -342,7 +342,7 @@ const products = [
     name: "Star Candle Holder",
     code: "StarCH001",
     size: "100*100*30mm",
-    material: "Pink Carnation & Leaves",
+    material: "Pink Rose & Leaves",
     image: "images/candleholder-star-1.jpg",
     alt: "Star-shaped clear resin candle holder with a preserved pink rose and delicate botanical details.",
     description: "A star-shaped resin candle holder featuring a delicate pink rose and tiny floral details, adding a romantic touch to your décor.",
@@ -375,7 +375,7 @@ const products = [
     material: "Purple Chrysanthemum & Globe Amaranth",
     image: "images/candleholder-purflower.jpg",
     alt: "Wooden candle holder with clear resin, preserved blue flowers and a round brass candle cup.",
-    description: "A unique combination of natural wood and clear resin, decorated with delicate blue flowers and a brass candle cup for a charming botanical touch.",
+    description: "Combining natural wood with clear resin and preserved purple flowers, this candle holder brings together organic textures and botanical beauty.",
     categories: ["floral", "candle holder"]
   },
   {
@@ -385,7 +385,7 @@ const products = [
     material: "Green Hydrangea",
     image: "images/candleholder-blueflower.jpg",
     alt: "Wooden candle holder with transparent resin, preserved purple flowers and a brass candle cup.",
-    description: "Combining natural wood with clear resin and preserved purple flowers, this candle holder brings together organic textures and botanical beauty.",
+    description: "A unique combination of natural wood and clear resin, decorated with delicate blue flowers and a brass candle cup for a charming botanical touch.",
     categories: ["floral", "candle holder"]
   },
   {
