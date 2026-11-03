@@ -47,7 +47,7 @@ const products = [
     image: "images/80ball-yellowChrysanthemumgarden.jpg",
     alt: "80mm clear resin sphere featuring yellow and white daisy flowers with green moss and natural miniature landscape.",
     description: "A charming combination of yellow and white daisies, preserved in clear resin sphere with green moss and natural earthy details.",
-    categories: ["ball", "moss",  "botanical"， "moss ball"]
+    categories: ["ball", "moss",  "botanical", "moss ball"]
   },
   {
     name: "80 Resin Ball Yellow & White Daisy",
