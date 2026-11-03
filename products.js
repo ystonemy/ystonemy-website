@@ -7,7 +7,7 @@ const products = [
     image: "images/65ball-shell-a.jpg",
     alt: "65mm handmade Clear resin sphere with miniature seashells and turquoise ocean-inspired details.",
     description: "Bring the beauty of the seaside into your space with this artistic resin sphere, capturing shells, sandy textures and ocean-inspired colours.",
-    categories: ["ball", "ocean Park", "ocean ball"]
+    categories: ["ball", "ocean park", "ocean ball"]
   },
   {
     name: "65 Resin Ball Ocean in a Sphere",
@@ -17,7 +17,7 @@ const products = [
     image: "images/65ball-shell-b.jpg",
     alt: "65mm handmade ocean-inspired resin ball featuring seashells, starfish and golden sand",
     description: "A miniature ocean world preserved in a clear resin sphere, featuring delicate seashells, starfish and beautiful coastal details.",
-    categories: ["ball","ocean Park", "ocean ball"]
+    categories: ["ball","ocean park", "ocean ball"]
   },
   {
     name: "80 Resin Ball Underwater Serenity",
@@ -27,7 +27,7 @@ const products = [
     image: "images/80ball-shell-a.jpg",
     alt: "80mm Handmade ocean-inspired resin ball featuring seashells, starfish and golden sand",
     description: "A delicate ocean inspired composition where seashells and aquatic details create a miniature world of calm and natural beauty.",
-    categories: ["ball","ocean Park", "ocean ball"]
+    categories: ["ball","ocean park", "ocean ball"]
   },
   {
     name: "80 Resin Ball Memories of the Sea",
@@ -37,7 +37,7 @@ const products = [
     image: "images/80ball-shell-b.jpg",
     alt: "80mm Miniature ocean world featuring seashells, starfish and sandy beach details inside resin.",
     description: "Preserving the beauty of coastal elements in a transparent resin sphere, this piece brings a touch of ocean-inspired artistry into everyday spaces.",
-    categories: ["ball","ocean Park", "ocean ball"]
+    categories: ["ball","ocean park", "ocean ball"]
   },
   {
     name: "80 Resin Ball Yellow Gerbera Daisy ",
