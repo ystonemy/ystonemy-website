@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skull | YstoneMy</title>
 
+  <!-- SEO -->
+  <title>Floral Skull | YstoneMy</title>
+  <meta name="description" content="Where nature meets art, delicate flowers find a new life within a striking skull design.">
+  <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ystonemy.github.io/ystonemy-website/skull-garden.html">
+
+  <!-- Social Media Sharing -->
+<meta property="og:title" content="Floral Skull | YstoneMy">
+<meta property="og:description" content="Where nature meets art, delicate flowers find a new life within a striking skull design.">
+<meta property="og:url" content="https://ystonemy.github.io/ystonemy-website/skull-garden.html">
+<meta property="og:type" content="website">
   <style>
     * {
       margin: 0;
@@ -18,6 +28,34 @@
       background: #faf9f6;
       line-height: 1.6;
     }
+
+    .intro-section {
+  max-width: 900px;
+  margin: 50px auto 40px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.intro-section h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.intro-tagline {
+  font-size: 18px;
+  font-style: regular;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.intro-section p {
+  font-size: 15px;
+  line-height: 1;
+  color: #555;
+  margin-bottom: 14px;
+}
     
 /* Product image zoom */
 .gallery .card img {
@@ -174,10 +212,17 @@
       padding: 22px;
     }
 
-    .gallery .card-content h3 {
+   .gallery .card-content h2 {
       font-size: 15px;
       margin-bottom: 4px;
     }
+    
+    .gallery .card-content .product-description {
+  color: #777;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 10px;
+  }
 
     .gallery .card-content p {
       color: #666;
@@ -259,11 +304,17 @@
 
   <!-- Page Hero -->
   <section class="page-hero">
-    <h1>Skull Floral</h1>
-    <p>
-      Skull Resin Sculptures & Floral Art
-    </p>
-     
+   <h1>Floral Skull</h1>
+
+  <p class="intro-tagline">
+    Where nature meets art, delicate flowers find a new life within a striking skull design.
+  </p>
+
+  <p>
+    Discover unique floral skull sculptures featuring real preserved flowers encased in clear resin. 
+    A creative blend of nature, artistry and distinctive decorative design.
+  </p>
+  
   </section>
 
 
@@ -292,7 +343,7 @@
 
 <!-- Generate product cards -->
 <script>
-const category = "Skull";
+const category = "skull";
 
 const container = document.getElementById("product-container");
 
@@ -306,13 +357,31 @@ if (filteredProducts.length === 0) {
   container.innerHTML = "<p>No products found in this category.</p>";
 } else {
   container.innerHTML = filteredProducts.map(product => `
-    <div class="card">
-      <img src="${product.image}" alt="${product.name}">
-      <div class="card-content">
-        <h3>${product.name}</h3>
-        <p>Code: ${product.code}</p>
-        ${product.size ? `<p>Size: ${product.size}</p>` : ""}
-        ${product.material ? `<p>Material: ${product.material}</p>` : ""}
+  <div class="card">
+
+    <img
+      src="${product.image}"
+      alt="${product.alt || product.name}"
+      loading="lazy"
+      decoding="async"
+    >
+
+    <div class="card-content">
+
+      <h2>${product.name}</h2>
+
+      <p>Code: ${product.code}</p>
+
+      ${product.size ? `<p>Size: ${product.size}</p>` : ""}
+
+      ${product.material ? `<p>Material: ${product.material}</p>` : ""}
+
+      ${product.description ? `
+        <p class="product-description">
+          ${product.description}
+        </p>
+      ` : ""}
+      
       </div>
     </div>
   `).join("");
