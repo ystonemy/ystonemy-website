@@ -45,8 +45,8 @@ const products = [
     size: "80mm diameter",
     material: "Dry Moss & flower",
     image: "images/80ball-yellowChrysanthemumgarden.jpg",
-    alt: "80mm clear resin sphere featuring yellow and white daisy flowers with green moss and natural miniature landscape.",
-    description: "A charming combination of yellow and white daisies, preserved in clear resin sphere with green moss and natural earthy details.",
+    alt: "80mm clear resin sphere featuring yellow gerbera daisy flowers with green moss and natural miniature landscape.",
+    description: "A Cheerful Yellow Gerbera Daisy, preserved in clear resin sphere with green moss and natural earthy details.",
     categories: ["ball", "moss",  "botanical", "moss ball"]
   },
   {
@@ -290,6 +290,8 @@ const products = [
     size: "105*85*25mm",
     material: "Pink rose",
     image: "images/candleholder-love-1.jpg",
+    alt: "Heart-shaped clear resin candle holder featuring preserved pink roses and delicate greenery.",
+    description: "A romantic heart-shaped resin candle holder featuring delicate pink roses and natural botanical details, creating a lovely decorative accent.",
     categories: ["floral", "candle holder"]
   },
   {
@@ -298,6 +300,8 @@ const products = [
     size: "105*85*25mm",
     material: "Pink white rose, leaves & Blue flower",
     image: "images/candleholder-love-2.jpg",
+    alt: "Heart-shaped transparent resin candle holder with pink and white preserved roses and botanical details.",
+    description: "A heart-shaped resin candle holder decorated with pink and white roses, delicate greenery and floral details for a soft romantic look.",
     categories: ["floral", "candle holder"]
   },
   {
@@ -306,6 +310,8 @@ const products = [
     size: "90*75*305mm",
     material: "Blue flower & Leaves",
     image: "images/candleholder-moon-1.jpg",
+    alt: "Crescent moon-shaped clear resin candle holder with preserved blue flowers and green botanical details.",
+    description: "A crescent moon-shaped resin candle holder featuring blue flowers and delicate greenery, inspired by the beauty of nature.",
     categories: ["floral", "candle holder"]
   },
   {
@@ -314,6 +320,8 @@ const products = [
     size: "90*75*305mm",
     material: "Pink Carnation & Leaves",
     image: "images/candleholder-moon-2.jpg",
+    alt: "Crescent moon-shaped transparent resin candle holder decorated with pink carnations and green leaves.",
+    description: "A crescent moon-shaped candle holder featuring pink carnations and delicate greenery, bringing a gentle floral charm to any space.",
     categories: ["floral", "candle holder"]
   },
   {
@@ -322,6 +330,8 @@ const products = [
     size: "100*100*30mm",
     material: "Pink Carnation & Leaves",
     image: "images/candleholder-star-1.jpg",
+    alt: "Star-shaped clear resin candle holder with a preserved pink rose and delicate botanical details.",
+    description: "A star-shaped resin candle holder featuring a delicate pink rose and tiny floral details, adding a romantic touch to your décor.",
     categories: ["floral", "candle holder"]
   },
    {
@@ -330,6 +340,8 @@ const products = [
     size: "100*100*30mm",
     material: "Yellow rose & blue flower",
     image: "images/candleholder-star-2.jpg",
+    alt: "Star-shaped transparent resin candle holder featuring yellow flowers and purple botanical details.",
+    description: "A cheerful star-shaped resin candle holder decorated with yellow flowers and colourful botanical details, bringing warmth and brightness to your space.",
     categories: ["floral", "candle holder"]
   },
   {
@@ -338,6 +350,8 @@ const products = [
     size: "100*100*30mm",
     material: "Green Hydrangea & Purple Chrysanthemum",
     image: "images/candleholder-star-3.jpg",
+    alt: "Star-shaped clear resin candle holder with purple chrysanthemums, green hydrangea and blue flowers.",
+    description: "A botanical star-shaped candle holder featuring purple chrysanthemums, green hydrangea and delicate blue floral accents preserved in clear resin.",
     categories: ["floral", "candle holder"]
   },
   {
@@ -346,6 +360,8 @@ const products = [
     size: "180*95*20mm",
     material: "Purple Chrysanthemum & Globe Amaranth",
     image: "images/candleholder-purflower.jpg",
+    alt: "Wooden candle holder with clear resin, preserved blue flowers and a round brass candle cup.",
+    description: "A unique combination of natural wood and clear resin, decorated with delicate blue flowers and a brass candle cup for a charming botanical touch.",
     categories: ["floral", "candle holder"]
   },
   {
@@ -354,6 +370,8 @@ const products = [
     size: "180*95*20mm",
     material: "Green Hydrangea",
     image: "images/candleholder-blueflower.jpg",
+    alt: "Wooden candle holder with transparent resin, preserved purple flowers and a brass candle cup.",
+    description: "Combining natural wood with clear resin and preserved purple flowers, this candle holder brings together organic textures and botanical beauty.",
     categories: ["floral", "candle holder"]
   },
   {
@@ -362,6 +380,8 @@ const products = [
     size: "112mm length",
     material: "Orange rose & metal part",
     image: "images/bottlestopper-orrangerose1.jpg",
+    alt: "Transparent resin sphere preserving a single pink hydrangea flower.",
+    description: "A lovely pink Hydrangea flower encased in clear resin sphere, capturing its soft colors and delicate floral charm.",
     categories: ["floral", "bottle stopper"]
   },
   {
