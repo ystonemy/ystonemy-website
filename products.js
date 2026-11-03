@@ -119,20 +119,24 @@ const products = [
   categories: ["tiny garden", "botanical", "moss"]
 },
   {
-    name: "50 Skull Floral ",
+    name: "50 Purple Floral Resin Skull ",
     code: "SK50-001",
     size: "70x50mm",
     material: "Floral",
     image: "images/g26a-skull-001-picture.jpg",
-    categories: ["Skull", "Botanical","Floral"]
+    alt: "Clear resin skull embedded with preserved purple dried flowers, gothic floral table decor.",
+    description: "Hand-made resin skull with purple blooms, dark romantic goth shelf ornament for home display.",
+    categories: ["skull", "botanical","floral"]
   },
   {
-    name: "50 Skull Floral ",
+    name: "50 Resin Skull Floral ",
     code: "SK50-002",
     size: "70x50mm",
     material: "Floral",
     image: "images/g26a-skull-002 picture.jpg",
-    categories: ["Skull", "Botanical","Floral"]
+    alt: "Transparent resin skull with mixed pink, white and blue preserved flowers, gothic decor sculpture.",
+    description: "Resin skull encasing pastel mixed florals, unique gothic accent for altar and table decoration.",
+    categories: ["skull", "botanical","floral"]
   },
   {
     name: "50 Skull Floral ",
@@ -140,7 +144,9 @@ const products = [
     size: "70x50mm",
     material: "Floral",
     image: "images/g26a-skull-003-picture.jpg",
-    categories: ["Skull", "Botanical","Floral"]
+    alt: "Clear resin skull with earthy tone dried wildflowers, botanical goth resin skull ornament.",
+    description: "Botanical resin skull with warm wildflowers, striking dark academia gothic collectible decor.",
+    categories: ["skull", "botanical","floral"]
   },
   {
     name: "50 Skull Floral ",
@@ -148,7 +154,9 @@ const products = [
     size: "70x50mm",
     material: "Floral",
     image: "images/g26a-skull-004-picture.jpg",
-    categories: ["Skull", "Botanical","Floral"]
+    alt: "Transparent resin skull embedded with yellow rose, gothic floral resin skull figurine.",
+    description: "Resin skull preserving yellow rose, romantic goth statement piece for shelf & desk decor.",
+    categories: ["skull", "botanical","floral"]
   },
   {
     name: "105 Skull Floral ",
@@ -156,7 +164,9 @@ const products = [
     size: "75x105mm",
     material: "Floral",
     image: "images/g26a-skull-005.jpg",
-    categories: ["Skull", "Botanical","Floral"]
+    alt: "Clear resin skull with pink and purple dried flowers, colourful goth floral resin sculpture",
+    description: "Vibrant pink-purple floral resin skull, whimsical goth decor for home and gifting.",
+    categories: ["skull", "botanical","floral"]
   },
   {
     name: "105 Skull Floral ",
@@ -164,7 +174,9 @@ const products = [
    size: "75x105mm",
     material: "Floral",
     image: "images/g26a-skull-006.jpg",
-    categories: ["Skull", "Botanical","Floral"]
+    alt: "Transparent resin skull with purple and yellow daisy blooms, botanical goth skull ornament.",
+    description: "Resin skull embedded with daisy flowers, elegant goth botanical art piece for display.",
+    categories: ["skull", "botanical","floral"]
   },
    {
     name: "105 Skull Floral ",
@@ -172,7 +184,9 @@ const products = [
     size: "75x105mm",
     material: "Floral",
     image: "images/g26a-skull-007.jpg",
-    categories: ["Skull", "Botanical","Floral"]
+    alt: "Clear resin skull with deep red preserved rose inside, dark romantic goth resin skull decor.",
+    description: "Resin skull encasing red rose, moody gothic centrepiece for dark aesthetic home styling.",
+    categories: ["skull", "botanical","floral"]
   },
   {
     name: "80 Resin Ball Tulip Orange",
