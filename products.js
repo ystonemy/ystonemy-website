@@ -394,8 +394,8 @@ const products = [
     size: "112mm length",
     material: "Orange rose & metal part",
     image: "images/bottlestopper-orrangerose1.jpg",
-    alt: "Transparent resin sphere preserving a single pink hydrangea flower.",
-    description: "A lovely pink Hydrangea flower encased in clear resin sphere, capturing its soft colors and delicate floral charm.",
+    alt: "Gold-accented resin bottle stopper featuring orange dried roses in a rounded top on gold metal wine stopper base",
+    description: "Premium orange rose resin wine stopper with gold accents. Real dried roses in clear resin. Luxury bottle stopper that preserves flavor and elevates your table.",
     categories: ["floral", "bottle stopper"]
   },
   {
@@ -404,6 +404,8 @@ const products = [
     size: "112mm length",
     material: "Yellow rose & metal part ",
     image: "images/bottlestopper-yellowrose1.jpg",
+    alt: "Gold-based resin sphere wine bottle stopper featuring bright yellow dried roses suspended in clear resin.",
+    description: "Golden yellow rose resin wine stopper with real dried flowers. Luxurious sphere design with gold accents. Perfect keepsake bottle stopper gift.",
     categories: ["floral", "bottle stopper"]
   },
   {
@@ -412,6 +414,8 @@ const products = [
     size: "112mm length",
     material: "Pink rose & metal part ",
     image: "images/bottlestopper-pink rose.jpg",
+    alt: "Sphere resin wine bottle stopper with soft pink dried roses and petals suspended in clear resin on silver metal base.",
+    description: "Delicate pink rose resin bottle stopper with real dried flowers. Soft sphere design for wine bottles. Romantic handmade gift for wine enthusiasts.",
     categories: ["floral", "bottle stopper"]
   },
   {
@@ -420,6 +424,8 @@ const products = [
     size: "112mm length",
     material: "Multi Flowers & metal part ",
     image: "images/bottlestopper-multiflowers.jpg",
+    alt: "Round resin bottle stopper filled with pink, purple, and multicolored dried flowers on silver metal stopper base.",
+    description: "Resin wine stopper with real colorful multi-flower dried blooms. Beautiful sphere design seals bottles tightly. Ideal floral gift for home bars and parties.",
     categories: ["floral", "bottle stopper"]
   },
   {
@@ -428,6 +434,8 @@ const products = [
     size: "112mm length",
     material: "Pink rose, Blue Hydrangea & metal part ",
     image: "images/bottlestopper-pinkpurple.jpg",
+    alt: "Round resin bottle stopper filled with pink and purple dried flowers and greenery on silver metal wine stopper base",
+    description: "Resin wine stopper with real pnk and purple floral dried blooms. Beautiful multi-color design seals bottles perfectly. Charming gift for any occasion.",
     categories: ["floral", "bottle stopper"]
   },
   {
@@ -436,6 +444,8 @@ const products = [
     size: "112mm length",
     material: "White Hydrangea, Blue Flower & metal part ",
     image: "images/bottlestopper-whitepurple.jpg",
+    alt: "Clear resin sphere wine bottle stopper containing white and purple dried flowers on black metal base.",
+    description: "White and purple resin bottle stopper with real dried flowers. Elegant clear sphere design. Functional wine stopper and stylish home décor gift.",
     categories: ["floral", "bottle stopper"]
   },
   {
@@ -444,6 +454,8 @@ const products = [
     size: "112mm length",
     material: "Multiple Color Berry Flowers & metal part ",
     image: "images/bottlestopper-berryflowers.jpg",
+    alt: "Resin wine bottle stopper with red berries and dried flowers embedded in clear cone-shaped resin top on black metal base",
+    description: "Handmade resin bottle stopper with real dried berries and flowers. Elegant wine stopper preserves freshness while adding floral charm. Perfect gift for wine lovers.",
     categories: ["floral", "bottle stopper"]
   },
   {
@@ -452,6 +464,8 @@ const products = [
     size: "112mm length",
     material: "Light Blue Hydrangea & metal part ",
     image: "images/bottlestopper-bluewhite.jpg",
+    alt: "Blue and white geometric resin wine bottle stopper with dried blue flowers and crystal accents on silver metal base.",
+    description: "Crystal-clear resin bottle stopper featuring blue and white dried flowers. Stylish wine stopper with geometric design. Unique bar accessory and thoughtful gift.",
     categories: ["floral", "bottle stopper"]
   },
   {
@@ -460,6 +474,8 @@ const products = [
     size: "112mm length",
     material: "Orange Rose & metal part ",
     image: "images/bottlestopper-orangerose.jpg",
+    alt: "Cone-shaped resin wine bottle stopper with vibrant orange and red dried roses embedded in clear resin on black metal base.",
+    description: "Orange rose resin bottle stopper handmade with real dried roses. Elegant cone-shaped wine stopper keeps wine fresh. Stunning floral barware gift idea.",
     categories: ["floral", "bottle stopper"]
   },
    {
@@ -468,6 +484,8 @@ const products = [
     size: "112mm length",
     material: "Yellow Rose & metal part ",
     image: "images/bottlestopper-yellowrose.jpg",
+     alt: "Cone-shaped resin wine bottle stopper with yellow dried roses and petals embedded in clear resin on black metal base.",
+    description: "Bright yellow rose resin bottle stopper handmade with real dried roses. Cone-shaped wine stopper preserves freshness. Cheerful floral gift for wine lovers.",
     categories: ["floral", "bottle stopper"]
   },
 ];
