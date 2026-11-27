@@ -33,33 +33,7 @@
       line-height: 1.6;
     }
 
-    .intro-section {
-  max-width: 900px;
-  margin: 50px auto 40px;
-  padding: 0 20px;
-  text-align: center;
-}
-
-.intro-section h1 {
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #333;
-}
-
-.intro-tagline {
-  font-size: 18px;
-  font-style: regular;
-  color: #777;
-  margin-bottom: 25px;
-}
-
-.intro-section p {
-  font-size: 15px;
-  line-height: 1;
-  color: #555;
-  margin-bottom: 14px;
-}
+ 
 
     /* ---------- Header（与首页一致） ---------- */
     header {
@@ -142,25 +116,61 @@
       background: #555;
     }
 
-    /* ---------- Page Hero ---------- */
-    .page-hero {
-      text-align: center;
-      padding: 15px 20px 20px;
-      background: #f1eee8;
-    }
+   
+/* ---------- Page Hero ---------- */
 
-    .page-hero h1 {
-      font-size: 46px;
-      letter-spacing: 4px;
-      margin-bottom: 2px;
-    }
+.page-hero {
+  text-align: center;
+  padding: 30px 20px 28px;
+  background: #f1eee8;
+}
 
-    .page-hero p {
-      color: #666;
-      font-size: 17px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
+.page-hero h1 {
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 0 0 12px;
+  color: #333;
+}
+
+.page-hero .intro-tagline {
+  font-size: 18px;
+  font-style: normal;
+  color: #777;
+  margin: 0 auto 18px;
+  line-height: 1.5;
+}
+
+.page-hero p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 25px 16px;
+  }
+
+  .page-hero h1 {
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+
+  .page-hero .intro-tagline {
+    font-size: 16px;
+  }
+
+  .page-hero p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
 
     /* ---------- Gallery ---------- */
     .gallery-section {
@@ -290,10 +300,10 @@
 
 
   <!-- Page Hero -->
-    <section class="intro-section">
+    <section class="page-hero">
   <h1>Resin Ball Art</h1>
 
-  <p class="intro-tagline">
+  <p>
     Small in size, yet filled with a world of imagination.
   </p>
 
