@@ -98,7 +98,49 @@
   }
 }
 
-   .hero {
+    .about {
+      background: #f1eee8;
+    }
+
+   .about-content { 
+     max-width: 900px; 
+     margin: auto; 
+     text-align: center; 
+}
+
+    .about-content h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .custom {
+      background: white;
+    }
+
+    .custom-content {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .custom-content h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .custom-content p {
+      color: #666;
+      margin-bottom: 25px;
+    }
+    
+    
+    .hero {
   min-height: 600px;
   background-image: url("images/hero.png");
   background-size: cover;
@@ -197,46 +239,7 @@
       font-size: 14px;
     }
       
-    .about {
-      background: #f1eee8;
-    }
 
-   .about-content { 
-     max-width: 900px; 
-     margin: auto; 
-     text-align: center; 
-}
-
-    .about-content h2 {
-      font-size: 34px;
-      margin-bottom: 20px;
-    }
-
-    .about-content p {
-      color: #555;
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-
-    .custom {
-      background: white;
-    }
-
-    .custom-content {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .custom-content h2 {
-      font-size: 34px;
-      margin-bottom: 20px;
-    }
-
-    .custom-content p {
-      color: #666;
-      margin-bottom: 25px;
-    }
 
     .contact {
       text-align: center;
@@ -292,6 +295,17 @@
     font-size: 13px;
   }
 
+   .about-content h1,
+  .custom-content h1,
+  .contact h1 {
+    font-size: 27px;
+  }
+
+  .about-content p,
+  .custom-content p {
+    font-size: 14px;
+  }
+  
   .hero {
     min-height: 55vh;
     padding: 60px 18px;
@@ -344,16 +358,6 @@
     line-height: 1.5;
   }
 
-  .about-content h2,
-  .custom-content h2,
-  .contact h2 {
-    font-size: 27px;
-  }
-
-  .about-content p,
-  .custom-content p {
-    font-size: 14px;
-  }
 
   .button {
     padding: 12px 20px;
@@ -394,10 +398,55 @@
     >
     <button type="submit">Search</button>
   </form>
-</header>
-
   
 </header>
+
+    <!-- About -->
+  <section class="about" id="about">
+
+    <div class="about-content">
+
+      <h1>About YstoneMy</h1>
+
+      <p>
+        YstoneMy creates resin artworks inspired by nature, memories and the beauty of everyday life.
+      </p>
+
+      <p>
+        Each piece is carefully crafted to preserve a moment, a natural element or a meaningful idea in a unique artistic form.
+      </p>
+
+      <p>
+        From botanical pieces and ocean-inspired designs to personalized creations, YstoneMy explores the possibilities of resin as an artistic medium.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- Custom Projects -->
+  <section class="custom" id="custom">
+
+    <div class="custom-content">
+
+      <h1>Custom Projects</h1>
+
+      <p>
+        Have a special idea, memory or natural element you would like to preserve?
+      </p>
+
+      <p>
+        YstoneMy offers customized resin artwork for personal collections, gifts, interior decoration and special projects.
+      </p>
+
+      <a href="#contact" class="button">
+        Get in Touch
+      </a>
+
+    </div>
+
+  </section>
 
 <!-- Hero -->
 <section class="hero" id="home">
@@ -475,7 +524,7 @@
 </a>
 
   <!-- Bottle Stopper -->
-  <a href=" bottle-stopper.html" class="card-link">
+  <a href="bottle-stopper.html" class="card-link">
     <div class="card"> 
     <img src="images/bottlestopper.png">
 
@@ -509,52 +558,7 @@
   </section>
 
 
-  <!-- About -->
-  <section class="about" id="about">
 
-    <div class="about-content">
-
-      <h2>About YstoneMy</h2>
-
-      <p>
-        YstoneMy creates resin artworks inspired by nature, memories and the beauty of everyday life.
-      </p>
-
-      <p>
-        Each piece is carefully crafted to preserve a moment, a natural element or a meaningful idea in a unique artistic form.
-      </p>
-
-      <p>
-        From botanical pieces and ocean-inspired designs to personalized creations, YstoneMy explores the possibilities of resin as an artistic medium.
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- Custom Projects -->
-  <section class="custom" id="custom">
-
-    <div class="custom-content">
-
-      <h2>Custom Projects</h2>
-
-      <p>
-        Have a special idea, memory or natural element you would like to preserve?
-      </p>
-
-      <p>
-        YstoneMy offers customized resin artwork for personal collections, gifts, interior decoration and special projects.
-      </p>
-
-      <a href="#contact" class="button">
-        Get in Touch
-      </a>
-
-    </div>
-
-  </section>
 
 
   <!-- Contact -->
